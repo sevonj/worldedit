@@ -17,3 +17,7 @@ config/icon="res://icon.png"
 [dotnet]
 
 project/assembly_name="WorldEditor"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/worldeditor/plugin.cfg")
