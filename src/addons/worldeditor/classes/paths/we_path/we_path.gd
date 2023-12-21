@@ -7,8 +7,10 @@ enum {
 	PATH_END,
 }
 
-var connected_0: WE_PathJunction
-var connected_1: WE_PathJunction
+@export var connection_handle0 := WE_ConnectionHandle.new()
+@export var connection_handle1 := WE_ConnectionHandle.new()
+@export var connected_0: WE_PathJunction
+@export var connected_1: WE_PathJunction
 
 
 func connect_path(junction: WE_PathJunction, end: int):
@@ -19,10 +21,11 @@ func connect_path(junction: WE_PathJunction, end: int):
 	match end:
 		PATH_START:
 			connected_0 = junction
+			junction.connect_path(connection_handle0, self)
 		PATH_END:
 			connected_1 = junction
+			junction.connect_path(connection_handle1, self)
 
-	junction.connect_path(self, end)
 	update()
 
 
@@ -30,11 +33,11 @@ func disconnect_path(end: int):
 	match end:
 		PATH_START:
 			if is_instance_valid(connected_0):
-				connected_0.disconnect_path(self, end)
+				connected_0.disconnect_path(connection_handle0)
 			connected_0 = null
 		PATH_END:
 			if is_instance_valid(connected_1):
-				connected_1.disconnect_path(self, end)
+				connected_1.disconnect_path(connection_handle1)
 			connected_1 = null
 	update()
 

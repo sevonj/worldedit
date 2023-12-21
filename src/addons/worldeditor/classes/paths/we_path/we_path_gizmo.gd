@@ -139,11 +139,11 @@ func reset_handles():
 	hovered_collider = null
 	var len := node.curve.get_baked_length()
 
-	if node.connected_0 == null:
+	if node.get("connected_0") == null:
 		connect_0_pos = sample_curve_start() * CONNECT_HANDLE_OFFSET
 	else:
 		connect_0_pos = sample_curve_start().origin
-	if node.connected_1 == null:
+	if node.get("connected_1") == null:
 		connect_1_pos = sample_curve_end() * -CONNECT_HANDLE_OFFSET
 	else:
 		connect_1_pos = sample_curve_end().origin
