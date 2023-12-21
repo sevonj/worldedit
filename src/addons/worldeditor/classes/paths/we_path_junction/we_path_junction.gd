@@ -54,10 +54,3 @@ func disconnect_path(handle: WE_ConnectionHandle):
 			connection_handles.remove_at(i)
 			connection_paths.remove_at(i)
 			break
-
-
-func connection_exists(path: WE_Path, end: int) -> bool:
-	for connection in connection_handles:
-		if connection.path == path and connection.end == end:
-			return true
-	return false
