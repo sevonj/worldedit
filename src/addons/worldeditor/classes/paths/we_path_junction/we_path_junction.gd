@@ -2,14 +2,8 @@
 extends Node3D
 class_name WE_PathJunction
 
-
-class Connection:
-	extends Resource
-	var path: WE_Path
-	var end: int
-
-
-@export var connections: Array[Connection] = []
+@export var connection_handles: Array[WE_ConnectionHandle] = []
+@export var connection_paths: Array[WE_Path] = []
 
 
 func _init():
@@ -37,39 +31,33 @@ func _notification(what):
 
 
 func update():
-	for connection in connections:
-		connection.path.update()
+	return
+	for handle in connection_handles:
+		handle.path.update()
 
 
-func connect_path(path: WE_Path, end: int):
-	if connection_exists(path, end):
+func connect_path(handle: WE_ConnectionHandle, path: WE_Path):
+	if handle in connection_handles:
 		push_error("Attempted to add a duplicate connection.")
 		return
 
-	var new_connection = Connection.new()
-	new_connection.path = path
-	new_connection.end = end
-
-	connections.append(new_connection)
+	connection_handles.append(handle)
+	connection_paths.append(path)
 
 
-func disconnect_path(path: WE_Path, end: int):
-	print("Disconnecting 0")
-	if not connection_exists(path, end):
+func disconnect_path(handle: WE_ConnectionHandle):
+	if not handle in connection_handles:
 		return
-	print("Disconnecting 1")
 
-	for i in connections.size():
-		var connection = connections[i]
-		if connection.path == path and connection.end == end:
-			connections.remove_at(i)
-			print("Disconnecting 2")
-
+	for i in connection_handles.size():
+		if connection_handles[i] == handle:
+			connection_handles.remove_at(i)
+			connection_paths.remove_at(i)
 			break
 
 
 func connection_exists(path: WE_Path, end: int) -> bool:
-	for connection in connections:
+	for connection in connection_handles:
 		if connection.path == path and connection.end == end:
 			return true
 	return false
