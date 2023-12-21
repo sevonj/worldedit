@@ -21,11 +21,21 @@ func connect_path(junction: WE_PathJunction, end: int):
 			connected_0 = junction
 		PATH_END:
 			connected_1 = junction
-		_:
-			push_error("Attempted connect an invalid end: ", end)
-			return
 
 	junction.connect_path(self, end)
+	update()
+
+
+func disconnect_path(end: int):
+	match end:
+		PATH_START:
+			if is_instance_valid(connected_0):
+				connected_0.disconnect_path(self, end)
+			connected_0 = null
+		PATH_END:
+			if is_instance_valid(connected_1):
+				connected_1.disconnect_path(self, end)
+			connected_1 = null
 	update()
 
 
