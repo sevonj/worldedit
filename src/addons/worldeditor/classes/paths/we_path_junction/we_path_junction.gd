@@ -10,6 +10,8 @@ class Connection:
 
 var connections: Array[Connection] = []
 
+func _init():
+	set_notify_transform(true)
 
 func _ready():
 	create_gizmo_coll()
@@ -24,6 +26,14 @@ func create_gizmo_coll():
 	add_child(area)
 	area.add_child(coll)
 
+func _notification(what):
+	match what:
+		NOTIFICATION_TRANSFORM_CHANGED:
+			update()
+
+func update():
+	for connection in connections:
+		connection.path.update()
 
 func connect_path(path: WE_Path, end: int):
 	if connection_already_exists(path, end):
