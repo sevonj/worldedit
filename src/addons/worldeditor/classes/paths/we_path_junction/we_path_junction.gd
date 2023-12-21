@@ -4,11 +4,12 @@ class_name WE_PathJunction
 
 
 class Connection:
+	extends Resource
 	var path: WE_Path
 	var end: int
 
 
-var connections: Array[Connection] = []
+@export var connections: Array[Connection] = []
 
 
 func _init():

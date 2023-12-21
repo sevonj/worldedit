@@ -7,8 +7,8 @@ enum {
 	PATH_END,
 }
 
-var connected_0: WE_PathJunction
-var connected_1: WE_PathJunction
+@export var connected_0: WE_PathJunction
+@export var connected_1: WE_PathJunction
 
 
 func connect_path(junction: WE_PathJunction, end: int):
