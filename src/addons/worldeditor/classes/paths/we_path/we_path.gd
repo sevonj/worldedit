@@ -12,6 +12,18 @@ enum {
 @export var connected_0: WE_PathJunction
 @export var connected_1: WE_PathJunction
 
+@export var segment_length: float = 4
+@export var samples: Array[Transform3D] = []
+
+signal updated
+
+
+func _init():
+	curve_changed.connect(regenerate_samples)
+
+func _ready():
+	curve.up_vector_enabled = false
+	regenerate_samples()
 
 func connect_path(junction: WE_PathJunction, end: int):
 	if !is_instance_valid(junction):
@@ -56,3 +68,20 @@ func update():
 		curve.set_point_position(
 			curve.point_count - 1, connected_1.global_position - global_position
 		)
+
+
+
+func regenerate_samples():
+	samples.clear()
+	if curve.point_count < 2:
+		return
+
+	var length := curve.get_baked_length()
+	var sample_count := int(length / segment_length) + 2
+	var actual_segment_length := length / (sample_count - 1)
+
+	for i in sample_count:
+		samples.append(curve.sample_baked_with_rotation(actual_segment_length * i))
+
+	updated.emit()
+

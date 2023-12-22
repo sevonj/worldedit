@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://barditvvep3ch"
-path.s3tc="res://.godot/imported/disconnect.png-604f05ffb639d728a49a4daad3d64d0a.s3tc.ctex"
+uid="uid://phfsfapkd7t6"
+path.bptc="res://.godot/imported/tex_tool_gray_06.png-765db5faef6eecb8c81a88faf0f78132.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,18 +11,18 @@ metadata={
 
 [deps]
 
-source_file="res://addons/worldeditor/icons/disconnect.png"
-dest_files=["res://.godot/imported/disconnect.png-604f05ffb639d728a49a4daad3d64d0a.s3tc.ctex"]
+source_file="res://addons/worldeditor/assets/textures/tex_tool_gray_06.png"
+dest_files=["res://.godot/imported/tex_tool_gray_06.png-765db5faef6eecb8c81a88faf0f78132.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
