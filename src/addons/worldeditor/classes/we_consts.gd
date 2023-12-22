@@ -8,3 +8,4 @@ const PATHJUNC_GIZMO_SIZE: float = 1
 const ICON_PATH_CONNECT = preload("res://addons/worldeditor/assets/icons/connect.png")
 const ICON_PATH_DISCONNECT = preload("res://addons/worldeditor/assets/icons/disconnect.png")
 const ICON_PATH = preload("res://addons/worldeditor/assets/icons/path.png")
+const ICON_PATHLOOP = preload("res://addons/worldeditor/assets/icons/pathloop.png")
