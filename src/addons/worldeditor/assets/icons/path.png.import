@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2bmgcvrsrkm5"
-path.s3tc="res://.godot/imported/connect.png-cea6cd6cfcc8d7a044477d023dac89b8.s3tc.ctex"
+uid="uid://bcagbphsxhv8q"
+path.s3tc="res://.godot/imported/path.png-66a80a5b602601285d43ed14cb7ca7cd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/worldeditor/icons/connect.png"
-dest_files=["res://.godot/imported/connect.png-cea6cd6cfcc8d7a044477d023dac89b8.s3tc.ctex"]
+source_file="res://addons/worldeditor/assets/icons/path.png"
+dest_files=["res://.godot/imported/path.png-66a80a5b602601285d43ed14cb7ca7cd.s3tc.ctex"]
 
 [params]
 
