@@ -31,16 +31,14 @@ func _notification(what):
 
 
 func update():
-	return
-	for handle in connection_handles:
-		handle.path.update()
+	for path in connection_paths:
+		path.update()
 
 
 func connect_path(handle: WE_ConnectionHandle, path: WE_Path):
 	if handle in connection_handles:
 		push_error("Attempted to add a duplicate connection.")
 		return
-
 	connection_handles.append(handle)
 	connection_paths.append(path)
 

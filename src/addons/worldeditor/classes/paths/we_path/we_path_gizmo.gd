@@ -1,6 +1,6 @@
 extends EditorNode3DGizmo
 
-const CONNECT_HANDLE_OFFSET := Vector3.BACK * .5
+const CONNECT_HANDLE_OFFSET := Vector3.BACK
 
 enum HandleIdx {
 	CONNECT_0,  # Drag this onto a juntion (start)
@@ -36,12 +36,11 @@ func _redraw():
 	if !dragging:
 		reset_handles()
 	if node.curve.point_count < 2:
-		draw_icon()
+		add_unscaled_billboard(
+			get_plugin().get_material("path_icon", self), WE_CONSTS.GIZMO_ICON_SIZE
+		)
 	draw_connectors(node)
-
-
-func draw_icon():
-	add_unscaled_billboard(get_plugin().get_material("path_icon", self), WE_CONSTS.GIZMO_ICON_SIZE)
+	# draw_samples(node)
 
 
 func draw_connectors(node: WE_Path):
@@ -72,6 +71,17 @@ func draw_connectors(node: WE_Path):
 		add_handles(con_handles, get_plugin().get_material("connect", self), con_handle_ids)
 	if dis_handles.size() > 0:
 		add_handles(dis_handles, get_plugin().get_material("disconnect", self), dis_handle_ids)
+
+
+func draw_samples(node: WE_Path):
+	""" For debug purposes """
+	var lines = PackedVector3Array()
+	for sample in node.samples:
+		lines.append(sample.origin)
+		lines.append(sample.origin + Vector3.UP)
+
+	if lines.size() > 0:
+		add_lines(lines, get_plugin().get_material("connect", self), false)
 
 
 func _set_handle(handle_id, secondary, camera, screen_pos) -> void:
@@ -137,7 +147,9 @@ func set_end_position(node: WE_Path, pos: Vector3):
 func reset_handles():
 	var node: WE_Path = get_node_3d()
 	hovered_collider = null
-	var len := node.curve.get_baked_length()
+	var len := 0.
+	if node.curve.point_count >= 2:
+		len = node.curve.get_baked_length()
 
 	if node.get("connected_0") == null:
 		connect_0_pos = sample_curve_start() * CONNECT_HANDLE_OFFSET
