@@ -83,7 +83,9 @@ func regenerate_samples():
 	var sample_count := int(length / segment_length) + 2
 	var actual_segment_length := length / (sample_count - 1)
 	for i in sample_count:
-		samples.append(curve.sample_baked_with_rotation(actual_segment_length * i))
+		var sample = curve.sample_baked_with_rotation(actual_segment_length * i)
+		sample.origin += global_position
+		samples.append(sample)
 
 	updated.emit()
 
