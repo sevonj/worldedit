@@ -29,6 +29,12 @@ func get_samples() -> Array[Transform3D]:
 		samples.append_array(path.samples)
 	return samples
 
+func get_path_points() -> Array[Vector3]:
+	var points: Array[Vector3] = []
+	for path in paths:
+		for i in path.curve.point_count:
+			points.append(path.curve.get_point_position(i) + path.global_position)
+	return points
 
 func get_normal() -> Vector3:
 	""" Calculate a normal vector for the loop from path curve points.

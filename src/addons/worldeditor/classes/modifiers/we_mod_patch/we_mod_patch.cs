@@ -31,8 +31,10 @@ public partial class we_mod_patch : Node
 		try
 		{
 			parent = (Node3D)GetParent();
-			Godot.Collections.Array samples = (Godot.Collections.Array)parent.Call("get_samples");
-			GenerateMesh(samples, parent);
+			Vector3[] path_points = ((Godot.Collections.Array<Vector3>)parent.Call("get_path_points")).ToArray();
+			Transform3D[] samples = ((Godot.Collections.Array<Transform3D>)parent.Call("get_samples")).ToArray();
+
+			GenerateMesh(samples, path_points);
 		}
 		catch (Exception e)
 		{
@@ -41,34 +43,41 @@ public partial class we_mod_patch : Node
 
 	}
 
-	public void GenerateMesh(Godot.Collections.Array samples, Node3D parent)
+
+	public void GenerateMesh(Transform3D[] samples, Vector3[] path_points)
 	{
 		Material mat_default = (Material)ResourceLoader.Load("res://addons/worldeditor/assets/materials/mat_tool_patch.tres");
 		ArrayMesh mesh;
 		SurfaceTool st = new();
 		st.Begin(Mesh.PrimitiveType.Triangles);
 
-		IPoint[] points = Delanaute(Samples2Points(samples));
+
+		IPoint[] points = Delaunate(Samples2Points(samples));
+
 		foreach (IPoint point in points.Reverse())
 		{
-			Vector3 vec = new((float)point.X, 0, (float)point.Y);
-			st.AddVertex(vec);
+			float x = (float)point.X;
+			float z = (float)point.Y;
+			float y = GetVertexHeight(new(x, z), samples);
+
+			st.SetUV(new(x, z));
+			st.AddVertex(new(x, y, z));
 		}
 
-		//st.GenerateNormals();
+		st.GenerateNormals();
 		mesh = st.Commit();
 		mesh.SurfaceSetMaterial(0, mat_default);
 		meshinstance.Mesh = mesh;
 	}
 
-	public IPoint[] Delanaute(IPoint[] points)
+	public static IPoint[] Delaunate(IPoint[] points)
 	{
 		Delaunator d = new(points);
 		ITriangle[] triangles = d.GetTriangles().ToArray();
 
 		// Triangles to vec
-		IPoint[] returnpoints = new IPoint[triangles.Count() * 3];
-		for (int i = 0; i < triangles.Count(); i++)
+		IPoint[] returnpoints = new IPoint[triangles.Length * 3];
+		for (int i = 0; i < triangles.Length; i++)
 		{
 			IPoint[] tri_points = triangles[i].Points.ToArray();
 			returnpoints[i * 3] = tri_points[0];
@@ -78,26 +87,39 @@ public partial class we_mod_patch : Node
 		return returnpoints;
 	}
 
-	private static IPoint[] Samples2Points(Godot.Collections.Array samples)
+	private static IPoint[] Samples2Points(Transform3D[] samples)
 	{
-		IPoint[] points = new IPoint[samples.Count];
-		for (int i = 0; i < samples.Count; i++)
+		IPoint[] points = new IPoint[samples.Length];
+		for (int i = 0; i < samples.Length; i++)
 		{
-			Transform3D sample = (Transform3D)samples[i];
 			points[i] = new Point
 			{
-				X = sample.Origin.X,
-				Y = sample.Origin.Z
+				X = samples[i].Origin.X,
+				Y = samples[i].Origin.Z
 			};
 		}
 		return points;
 	}
 
-	public (Vector3 min, Vector3 max) GetAABB(Godot.Collections.Array samples)
+	public static float GetVertexHeight(Vector2 position, Transform3D[] samples)
 	{
-		Transform3D _sample = (Transform3D)samples[0];
-		Vector3 min = _sample.Origin;
-		Vector3 max = _sample.Origin;
+		// Only considers edge vertices, because for now the patch only has edge vertices.
+		foreach (Transform3D sample in samples)
+		{
+			Vector3 vert = sample.Origin;
+			Vector2 flatVert = new(vert.X, vert.Z);
+			float distance = flatVert.DistanceTo(position);
+
+			if (distance <= 0.01)
+				return vert.Y;
+		}
+		return 0;
+	}
+
+	public static (Vector3 min, Vector3 max) GetAABB(Transform3D[] samples)
+	{
+		Vector3 min = samples[0].Origin;
+		Vector3 max = samples[0].Origin;
 		foreach (Transform3D sample in samples)
 		{
 			min.X = Math.Min(min.X, sample.Origin.X);
