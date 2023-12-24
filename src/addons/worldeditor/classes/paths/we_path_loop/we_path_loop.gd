@@ -44,10 +44,15 @@ func get_normal() -> Vector3:
 	return Vector3.UP
 
 
-func recenter():
+func recenter() -> void:
 	if paths.is_empty():
 		return
-	var avg: Vector3
+	global_position = get_center()
+
+func get_center() -> Vector3:
+	if paths.is_empty():
+		return global_position
+	var vectors: Array[Vector3] = []
 	for path in paths:
-		avg += path.get_center()
-	global_position = avg / paths.size()
+		vectors.append(path.get_center())
+	return WE_Utility.get_center(vectors)
