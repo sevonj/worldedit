@@ -13,9 +13,7 @@ public partial class we_mod_road : Node
 	public override void _Ready()
 	{
 		AddChild(meshinstance);
-		//meshinstance.Owner = Owner;
 		meshinstance.SetMeta("_edit_lock_", true);
-
 		try
 		{
 			Path3D parent = (Path3D)GetParent();
@@ -23,13 +21,12 @@ public partial class we_mod_road : Node
 		}
 		catch (Exception e)
 		{
-			GD.Print("Failed to connect parent.", e);
+			GD.PushError("Failed to connect parent.", e);
 		}
 	}
 
 	public void Update()
 	{
-		GD.Print("Updating road!");
 		Path3D path;
 
 		try
@@ -40,7 +37,7 @@ public partial class we_mod_road : Node
 		}
 		catch (Exception e)
 		{
-			GD.Print("Update failed.", e);
+			GD.PushError("Update failed.", e);
 		}
 
 	}

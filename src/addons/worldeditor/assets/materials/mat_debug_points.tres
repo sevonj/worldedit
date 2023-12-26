@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://4dkoep01npwv"]
+
+[ext_resource type="Texture2D" uid="uid://ch5cmpbisdncj" path="res://addons/worldeditor/assets/textures/tex_tool_symbol_cross.png" id="1_c5i5m"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_c5i5m")
+billboard_keep_scale = true
+use_point_size = true
+point_size = 8.0

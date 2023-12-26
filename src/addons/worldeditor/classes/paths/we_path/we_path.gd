@@ -83,7 +83,9 @@ func regenerate_samples():
 	var sample_count := int(length / segment_length) + 2
 	var actual_segment_length := length / (sample_count - 1)
 	for i in sample_count:
-		samples.append(curve.sample_baked_with_rotation(actual_segment_length * i))
+		var sample = curve.sample_baked_with_rotation(actual_segment_length * i)
+		sample.origin += global_position
+		samples.append(sample)
 
 	updated.emit()
 
@@ -102,18 +104,11 @@ func recenter():
 
 
 func get_center() -> Vector3:
-	""" Returns the average of curve points """
+	""" Returns the middle of curve points """
 	if curve.point_count == 0:
 		return global_position
 
-	var min = curve.get_point_position(0)
-	var max = curve.get_point_position(0)
+	var vectors: Array[Vector3] = []
 	for i in curve.point_count:
-		var pos := curve.get_point_position(i)
-		min.x = min(min.x, pos.x)
-		min.y = min(min.y, pos.y)
-		min.z = min(min.z, pos.z)
-		max.x = max(max.x, pos.x)
-		max.y = max(max.y, pos.y)
-		max.z = max(max.z, pos.z)
-	return (min + max) / 2 + global_position
+		vectors.append(curve.get_point_position(i))
+	return WE_Utility.get_center(vectors) + global_position

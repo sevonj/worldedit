@@ -10,7 +10,7 @@ static func plane_line_intersection(
 		var t := plane_normal.dot(plane_point - line_a) / denominator
 		var intersect_point := line_a + t * dir
 		return intersect_point
-	print("Plane-line intersection failed")
+	push_error("Plane-line intersection failed")
 	return Vector3.ZERO
 
 
