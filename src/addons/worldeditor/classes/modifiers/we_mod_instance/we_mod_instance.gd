@@ -105,6 +105,7 @@ func get_instance_transforms(parent: WE_Path, spacing: float) -> Array[Transform
 
 	for i in sample_count:
 		var transform := parent.curve.sample_baked_with_rotation(actual_spacing * i)
+		transform.origin += parent.global_position
 		if point_up:
 			var direction := Vector3(transform.basis.z.x, 0, transform.basis.z.z).normalized()
 			transform = transform.looking_at(transform.origin + direction, Vector3.UP)
