@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cyo5vwtojt2ho"]
 
-[ext_resource type="Texture2D" uid="uid://bedn3k35i8l00" path="res://addons/worldeditor/assets/textures/tex_tool_orange_10.png" id="1_f85yl"]
+[ext_resource type="Texture2D" uid="uid://cf5wfcvgh8feo" path="res://addons/worldeditor/assets/textures/tex_tool_white_02.png" id="1_skhp0"]
 
 [resource]
-albedo_texture = ExtResource("1_f85yl")
+albedo_texture = ExtResource("1_skhp0")
