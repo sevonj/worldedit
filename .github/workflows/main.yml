@@ -19,3 +19,15 @@ jobs:
 
       - name: Check formatting
         run: gdformat --check src/addons/worldeditor/classes
+  tests:
+    name: "Tests"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: MikeSchulze/gdUnit4-action@v1
+        with:
+          godot-version: '4.2.1'
+          godot-net: 'true'
+          project_dir: 'src'
+          paths: 'res://addons/worldedit/tests'
+          
