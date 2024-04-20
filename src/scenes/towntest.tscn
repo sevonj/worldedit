@@ -1,0 +1,284 @@
+[gd_scene load_steps=33 format=3 uid="uid://c7s3jv1hxwoo6"]
+
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path/we_path.gd" id="1_ekn6r"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_connection_handle.gd" id="2_0au8u"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/modifiers/we_mod_road/we_mod_road.cs" id="3_ko1mp"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path_loop/we_path_loop.gd" id="4_65bcc"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/modifiers/we_mod_instance/we_mod_instance.gd" id="4_infl7"]
+[ext_resource type="PackedScene" uid="uid://616ylmmns21i" path="res://assets/models/streetlight.glb" id="5_jlu6i"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/modifiers/we_mod_patch/we_mod_patch.cs" id="5_m0cop"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path_junction/we_path_junction.gd" id="6_eiacx"]
+
+[sub_resource type="Curve3D" id="Curve3D_1f4yp"]
+_data = {
+"points": PackedVector3Array(-4.38058, -0.902702, 5.57346, 4.38058, 0.902702, -5.57346, -35.5732, -1.98438, 6.54159, -12.2129, 0.599535, 0.720048, 12.2129, -0.599535, -0.720048, -8.80039, -1.12433, -6.54159, -17.283, 0.780483, -6.29191, 17.283, -0.780483, 6.29191, 35.5732, 1.98438, 1.58352),
+"tilts": PackedFloat32Array(0, -2.48772, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_12em0"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_7j20q"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Curve3D" id="Curve3D_182eb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -87.7343, -0.850936, 5.46962, -19.9628, -1.26084, 5.35704, 19.9628, 1.26084, -5.35704, 14.7138, 0.850936, -46.8148, 4.59109, -0.324463, -55.0116, -4.59109, 0.324463, 55.0116, 87.7343, -0.850936, 46.8148),
+"tilts": PackedFloat32Array(0, -1.97859, -1.59343)
+}
+point_count = 3
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_fhhe0"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_2yumq"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Curve3D" id="Curve3D_qjyvr"]
+_data = {
+"points": PackedVector3Array(-29.7284, 1.86819, -20.8305, 29.7284, -1.86819, 20.8305, -38.1247, -0.0969312, -20.3207, -10.1523, -0.491398, -13.9883, 10.1523, 0.491398, 13.9883, -1.38487, 0.096935, 2.80875, 0, 0, 0, 0, 0, 0, 38.1247, -0.096935, 20.3207),
+"tilts": PackedFloat32Array(0, 1.18085, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_iyrro"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_l7ofn"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Curve3D" id="Curve3D_ei3e3"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -29.9458, 1.98438, 0.47752, -11.0335, 0.723464, -0.772964, 11.0335, -0.723464, 0.772964, 0.870499, -0.0197341, -0.24629, -3.38385, 0.293949, 0.532295, 3.38385, -0.293949, -0.532295, 29.9457, -1.98438, -0.47752),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_dkeg4"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_48oge"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Curve3D" id="Curve3D_0cyst"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.55145, 1.98438, -22.7997, -5.86824, -0.177641, -9.66092, 5.86824, 0.177641, 9.66092, -1.17223, 0.251646, 0.317525, 0.5341, 1.04913, -2.64681, -0.5341, -1.04913, 2.64681, 2.55145, -1.98438, 22.7997),
+"tilts": PackedFloat32Array(0, -2.11522, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_itxs4"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_oodq7"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_q7tyd"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_toyk3"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_6ar5d"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Curve3D" id="Curve3D_sf06g"]
+_data = {
+"points": PackedVector3Array(-3.29702, -0.256947, -0.18121, 3.29702, 0.256947, 0.18121, -22.8903, 0.55758, 0.668396, -5.96991, 2.22137, -2.51455, 5.96991, -2.22137, 2.51455, 2.14623, -0.55758, -1.07079, -6.28303, -0.667633, -0.199989, 6.28303, 0.667633, 0.199989, 22.8903, 0.55758, 1.07079),
+"tilts": PackedFloat32Array(-2.39488, 0, 0)
+}
+point_count = 3
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_5ycoj"]
+_data = {
+"points": PackedVector3Array(-0.595291, 3.12231, -3.48521, 0.595291, -3.12231, 3.48521, 4.504, 0, -23.4785, -2.21921, 6.22595, -6.68347, 2.21921, -6.22595, 6.68347, -4.504, 0, 23.4785),
+"tilts": PackedFloat32Array(-2.76317, -2.79404)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_iaawa"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_7qkx7"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Resource" id="Resource_we2wb"]
+script = ExtResource("2_0au8u")
+
+[sub_resource type="Curve3D" id="Curve3D_eo07v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -22.2153, -1.90735e-06, -23.6291, 0, 0, 0, 0, 0, 0, 22.2153, 1.90735e-06, 23.6291),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[node name="Node3D" type="Node3D"]
+
+[node name="mainroad" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7043, 1.98438, -4.17711)
+curve = SubResource("Curve3D_1f4yp")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_12em0")
+connection_handle1 = SubResource("Resource_7j20q")
+connected_0 = NodePath("../WE_PathJunction5")
+connected_1 = NodePath("../WE_PathJunction2")
+
+[node name="we_mod_road" type="Node" parent="mainroad"]
+script = ExtResource("3_ko1mp")
+
+[node name="WE_Mod_Instance" type="Node" parent="mainroad"]
+script = ExtResource("4_infl7")
+scene = ExtResource("5_jlu6i")
+spacing = 30.0
+
+[node name="WE_Path2" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4347, 0.850936, -50.3634)
+curve = SubResource("Curve3D_182eb")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_fhhe0")
+connection_handle1 = SubResource("Resource_2yumq")
+connected_0 = NodePath("../WE_PathJunction6")
+connected_1 = NodePath("../WE_PathJunction4")
+
+[node name="WE_Path" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2557, 0.096935, 22.6852)
+curve = SubResource("Curve3D_qjyvr")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_iyrro")
+connection_handle1 = SubResource("Resource_l7ofn")
+connected_0 = NodePath("../WE_PathJunction5")
+connected_1 = NodePath("../WE_PathJunction")
+
+[node name="WE_Path3" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2233, 1.98438, -3.07111)
+curve = SubResource("Curve3D_ei3e3")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_dkeg4")
+connection_handle1 = SubResource("Resource_48oge")
+connected_0 = NodePath("../WE_PathJunction2")
+connected_1 = NodePath("../WE_PathJunction4")
+
+[node name="we_mod_road" type="Node" parent="WE_Path3"]
+script = ExtResource("3_ko1mp")
+
+[node name="WE_Mod_Instance" type="Node" parent="WE_Path3"]
+script = ExtResource("4_infl7")
+scene = ExtResource("5_jlu6i")
+spacing = 30.0
+point_up = true
+
+[node name="WE_Path4" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.8289, 1.98438, 20.2062)
+curve = SubResource("Curve3D_0cyst")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_itxs4")
+connection_handle1 = SubResource("Resource_oodq7")
+connected_0 = NodePath("../WE_PathJunction2")
+connected_1 = NodePath("../WE_PathJunction")
+
+[node name="we_mod_road" type="Node" parent="WE_Path4"]
+script = ExtResource("3_ko1mp")
+
+[node name="WE_Mod_Instance" type="Node" parent="WE_Path4"]
+script = ExtResource("4_infl7")
+scene = ExtResource("5_jlu6i")
+spacing = 16.0
+point_up = true
+
+[node name="WE_PathJunction" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.3804, 0, 43.0059)
+script = ExtResource("6_eiacx")
+connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_l7ofn"), SubResource("Resource_oodq7"), SubResource("Resource_q7tyd")])
+connection_paths = [NodePath("../WE_Path"), NodePath("../WE_Path4"), NodePath("../WE_Path5")]
+
+[node name="WE_PathJunction2" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2775, 3.96876, -2.59359)
+script = ExtResource("6_eiacx")
+connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_dkeg4"), SubResource("Resource_7j20q"), SubResource("Resource_itxs4")])
+connection_paths = [NodePath("../WE_Path3"), NodePath("../mainroad"), NodePath("../WE_Path4")]
+
+[node name="WE_PathJunction3" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.161, 0, 43.4083)
+script = ExtResource("6_eiacx")
+connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_toyk3"), SubResource("Resource_6ar5d")])
+connection_paths = [NodePath("../WE_Path6"), NodePath("../WE_Path5")]
+
+[node name="WE_Path5" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.2707, -0.55758, 42.3375)
+curve = SubResource("Curve3D_sf06g")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_q7tyd")
+connection_handle1 = SubResource("Resource_6ar5d")
+connected_0 = NodePath("../WE_PathJunction")
+connected_1 = NodePath("../WE_PathJunction3")
+
+[node name="WE_Path6" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.665, 0, 19.9298)
+curve = SubResource("Curve3D_5ycoj")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_iaawa")
+connection_handle1 = SubResource("Resource_toyk3")
+connected_0 = NodePath("../WE_PathJunction4")
+connected_1 = NodePath("../WE_PathJunction3")
+
+[node name="WE_PathJunction4" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.169, 0, -3.54863)
+script = ExtResource("6_eiacx")
+connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_48oge"), SubResource("Resource_iaawa"), SubResource("Resource_2yumq")])
+connection_paths = [NodePath("../WE_Path3"), NodePath("../WE_Path6"), NodePath("../WE_Path2")]
+
+[node name="WE_PathLoop" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5695, 0.992191, -26.7173)
+script = ExtResource("4_65bcc")
+paths = [NodePath("../WE_Path2"), NodePath("../mainroad"), NodePath("../WE_Path3"), NodePath("../WE_Path7")]
+
+[node name="we_mod_patch" type="Node" parent="WE_PathLoop"]
+script = ExtResource("5_m0cop")
+
+[node name="WE_PathLoop2" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7666, 1.04066, 9.25404)
+script = ExtResource("4_65bcc")
+paths = [NodePath("../WE_Path"), NodePath("../mainroad"), NodePath("../WE_Path4")]
+sides = Array[int]([0, 1, 1])
+
+[node name="we_mod_patch" type="Node" parent="WE_PathLoop2"]
+script = ExtResource("5_m0cop")
+
+[node name="WE_PathLoop3" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.2469, 0.7134, 19.6332)
+script = ExtResource("4_65bcc")
+paths = [NodePath("../WE_Path3"), NodePath("../WE_Path4"), NodePath("../WE_Path5"), NodePath("../WE_Path6")]
+sides = Array[int]([1, 0, 0, 0])
+
+[node name="we_mod_patch" type="Node" parent="WE_PathLoop3"]
+script = ExtResource("5_m0cop")
+
+[node name="WE_PathJunction5" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.869, 3.8147e-06, 2.36448)
+script = ExtResource("6_eiacx")
+connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_12em0"), SubResource("Resource_iyrro"), SubResource("Resource_7qkx7")])
+connection_paths = [NodePath("../mainroad"), NodePath("../WE_Path"), NodePath("../WE_Path7")]
+
+[node name="WE_PathJunction6" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.2996, 0, -44.8938)
+script = ExtResource("6_eiacx")
+connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_we2wb"), SubResource("Resource_fhhe0")])
+connection_paths = [NodePath("../WE_Path7"), NodePath("../WE_Path2")]
+
+[node name="WE_Path7" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0843, 1.90735e-06, -21.2647)
+curve = SubResource("Curve3D_eo07v")
+script = ExtResource("1_ekn6r")
+connection_handle0 = SubResource("Resource_we2wb")
+connection_handle1 = SubResource("Resource_7qkx7")
+connected_0 = NodePath("../WE_PathJunction6")
+connected_1 = NodePath("../WE_PathJunction5")
