@@ -120,5 +120,4 @@ func get_center() -> Vector3:
 		vectors.append(curve.get_point_position(i))
 	return WEUtility.get_center(vectors) + global_position
 
-
 # --- Private --- #
