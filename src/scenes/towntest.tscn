@@ -129,156 +129,156 @@ curve = SubResource("Curve3D_1f4yp")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_12em0")
 connection_handle1 = SubResource("Resource_7j20q")
-connected_0 = NodePath("../WE_PathJunction5")
-connected_1 = NodePath("../WE_PathJunction2")
+connected_0 = NodePath("../WEPathJunction5")
+connected_1 = NodePath("../WEPathJunction2")
 
 [node name="we_mod_road" type="Node" parent="mainroad"]
 script = ExtResource("3_ko1mp")
 
-[node name="WE_Mod_Instance" type="Node" parent="mainroad"]
+[node name="WEModInstance" type="Node" parent="mainroad"]
 script = ExtResource("4_infl7")
 scene = ExtResource("5_jlu6i")
 spacing = 30.0
 
-[node name="WE_Path2" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath2" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4347, 0.850936, -50.3634)
 curve = SubResource("Curve3D_182eb")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_fhhe0")
 connection_handle1 = SubResource("Resource_2yumq")
-connected_0 = NodePath("../WE_PathJunction6")
-connected_1 = NodePath("../WE_PathJunction4")
+connected_0 = NodePath("../WEPathJunction6")
+connected_1 = NodePath("../WEPathJunction4")
 
-[node name="WE_Path" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2557, 0.096935, 22.6852)
 curve = SubResource("Curve3D_qjyvr")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_iyrro")
 connection_handle1 = SubResource("Resource_l7ofn")
-connected_0 = NodePath("../WE_PathJunction5")
-connected_1 = NodePath("../WE_PathJunction")
+connected_0 = NodePath("../WEPathJunction5")
+connected_1 = NodePath("../WEPathJunction")
 
-[node name="WE_Path3" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath3" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.2233, 1.98438, -3.07111)
 curve = SubResource("Curve3D_ei3e3")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_dkeg4")
 connection_handle1 = SubResource("Resource_48oge")
-connected_0 = NodePath("../WE_PathJunction2")
-connected_1 = NodePath("../WE_PathJunction4")
+connected_0 = NodePath("../WEPathJunction2")
+connected_1 = NodePath("../WEPathJunction4")
 
-[node name="we_mod_road" type="Node" parent="WE_Path3"]
+[node name="we_mod_road" type="Node" parent="WEPath3"]
 script = ExtResource("3_ko1mp")
 
-[node name="WE_Mod_Instance" type="Node" parent="WE_Path3"]
+[node name="WEModInstance" type="Node" parent="WEPath3"]
 script = ExtResource("4_infl7")
 scene = ExtResource("5_jlu6i")
 spacing = 30.0
 point_up = true
 
-[node name="WE_Path4" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath4" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.8289, 1.98438, 20.2062)
 curve = SubResource("Curve3D_0cyst")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_itxs4")
 connection_handle1 = SubResource("Resource_oodq7")
-connected_0 = NodePath("../WE_PathJunction2")
-connected_1 = NodePath("../WE_PathJunction")
+connected_0 = NodePath("../WEPathJunction2")
+connected_1 = NodePath("../WEPathJunction")
 
-[node name="we_mod_road" type="Node" parent="WE_Path4"]
+[node name="we_mod_road" type="Node" parent="WEPath4"]
 script = ExtResource("3_ko1mp")
 
-[node name="WE_Mod_Instance" type="Node" parent="WE_Path4"]
+[node name="WEModInstance" type="Node" parent="WEPath4"]
 script = ExtResource("4_infl7")
 scene = ExtResource("5_jlu6i")
 spacing = 16.0
 point_up = true
 
-[node name="WE_PathJunction" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+[node name="WEPathJunction" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.3804, 0, 43.0059)
 script = ExtResource("6_eiacx")
 connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_l7ofn"), SubResource("Resource_oodq7"), SubResource("Resource_q7tyd")])
-connection_paths = [NodePath("../WE_Path"), NodePath("../WE_Path4"), NodePath("../WE_Path5")]
+connection_paths = [NodePath("../WEPath"), NodePath("../WEPath4"), NodePath("../WEPath5")]
 
-[node name="WE_PathJunction2" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+[node name="WEPathJunction2" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2775, 3.96876, -2.59359)
 script = ExtResource("6_eiacx")
 connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_dkeg4"), SubResource("Resource_7j20q"), SubResource("Resource_itxs4")])
-connection_paths = [NodePath("../WE_Path3"), NodePath("../mainroad"), NodePath("../WE_Path4")]
+connection_paths = [NodePath("../WEPath3"), NodePath("../mainroad"), NodePath("../WEPath4")]
 
-[node name="WE_PathJunction3" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+[node name="WEPathJunction3" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.161, 0, 43.4083)
 script = ExtResource("6_eiacx")
 connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_toyk3"), SubResource("Resource_6ar5d")])
-connection_paths = [NodePath("../WE_Path6"), NodePath("../WE_Path5")]
+connection_paths = [NodePath("../WEPath6"), NodePath("../WEPath5")]
 
-[node name="WE_Path5" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath5" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.2707, -0.55758, 42.3375)
 curve = SubResource("Curve3D_sf06g")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_q7tyd")
 connection_handle1 = SubResource("Resource_6ar5d")
-connected_0 = NodePath("../WE_PathJunction")
-connected_1 = NodePath("../WE_PathJunction3")
+connected_0 = NodePath("../WEPathJunction")
+connected_1 = NodePath("../WEPathJunction3")
 
-[node name="WE_Path6" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath6" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.665, 0, 19.9298)
 curve = SubResource("Curve3D_5ycoj")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_iaawa")
 connection_handle1 = SubResource("Resource_toyk3")
-connected_0 = NodePath("../WE_PathJunction4")
-connected_1 = NodePath("../WE_PathJunction3")
+connected_0 = NodePath("../WEPathJunction4")
+connected_1 = NodePath("../WEPathJunction3")
 
-[node name="WE_PathJunction4" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+[node name="WEPathJunction4" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.169, 0, -3.54863)
 script = ExtResource("6_eiacx")
 connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_48oge"), SubResource("Resource_iaawa"), SubResource("Resource_2yumq")])
-connection_paths = [NodePath("../WE_Path3"), NodePath("../WE_Path6"), NodePath("../WE_Path2")]
+connection_paths = [NodePath("../WEPath3"), NodePath("../WEPath6"), NodePath("../WEPath2")]
 
-[node name="WE_PathLoop" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
+[node name="WEPathLoop" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5695, 0.992191, -26.7173)
 script = ExtResource("4_65bcc")
-paths = [NodePath("../WE_Path2"), NodePath("../mainroad"), NodePath("../WE_Path3"), NodePath("../WE_Path7")]
+paths = [NodePath("../WEPath2"), NodePath("../mainroad"), NodePath("../WEPath3"), NodePath("../WEPath7")]
 
-[node name="we_mod_patch" type="Node" parent="WE_PathLoop"]
+[node name="we_mod_patch" type="Node" parent="WEPathLoop"]
 script = ExtResource("5_m0cop")
 
-[node name="WE_PathLoop2" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
+[node name="WEPathLoop2" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.7666, 1.04066, 9.25404)
 script = ExtResource("4_65bcc")
-paths = [NodePath("../WE_Path"), NodePath("../mainroad"), NodePath("../WE_Path4")]
+paths = [NodePath("../WEPath"), NodePath("../mainroad"), NodePath("../WEPath4")]
 sides = Array[int]([0, 1, 1])
 
-[node name="we_mod_patch" type="Node" parent="WE_PathLoop2"]
+[node name="we_mod_patch" type="Node" parent="WEPathLoop2"]
 script = ExtResource("5_m0cop")
 
-[node name="WE_PathLoop3" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
+[node name="WEPathLoop3" type="Node3D" parent="." node_paths=PackedStringArray("paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.2469, 0.7134, 19.6332)
 script = ExtResource("4_65bcc")
-paths = [NodePath("../WE_Path3"), NodePath("../WE_Path4"), NodePath("../WE_Path5"), NodePath("../WE_Path6")]
+paths = [NodePath("../WEPath3"), NodePath("../WEPath4"), NodePath("../WEPath5"), NodePath("../WEPath6")]
 sides = Array[int]([1, 0, 0, 0])
 
-[node name="we_mod_patch" type="Node" parent="WE_PathLoop3"]
+[node name="we_mod_patch" type="Node" parent="WEPathLoop3"]
 script = ExtResource("5_m0cop")
 
-[node name="WE_PathJunction5" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+[node name="WEPathJunction5" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.869, 3.8147e-06, 2.36448)
 script = ExtResource("6_eiacx")
 connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_12em0"), SubResource("Resource_iyrro"), SubResource("Resource_7qkx7")])
-connection_paths = [NodePath("../mainroad"), NodePath("../WE_Path"), NodePath("../WE_Path7")]
+connection_paths = [NodePath("../mainroad"), NodePath("../WEPath"), NodePath("../WEPath7")]
 
-[node name="WE_PathJunction6" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
+[node name="WEPathJunction6" type="Node3D" parent="." node_paths=PackedStringArray("connection_paths")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.2996, 0, -44.8938)
 script = ExtResource("6_eiacx")
 connection_handles = Array[ExtResource("2_0au8u")]([SubResource("Resource_we2wb"), SubResource("Resource_fhhe0")])
-connection_paths = [NodePath("../WE_Path7"), NodePath("../WE_Path2")]
+connection_paths = [NodePath("../WEPath7"), NodePath("../WEPath2")]
 
-[node name="WE_Path7" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
+[node name="WEPath7" type="Path3D" parent="." node_paths=PackedStringArray("connected_0", "connected_1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0843, 1.90735e-06, -21.2647)
 curve = SubResource("Curve3D_eo07v")
 script = ExtResource("1_ekn6r")
 connection_handle0 = SubResource("Resource_we2wb")
 connection_handle1 = SubResource("Resource_7qkx7")
-connected_0 = NodePath("../WE_PathJunction6")
-connected_1 = NodePath("../WE_PathJunction5")
+connected_0 = NodePath("../WEPathJunction6")
+connected_1 = NodePath("../WEPathJunction5")

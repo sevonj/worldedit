@@ -4,20 +4,20 @@ const GIZMO = preload("we_path_loop_gizmo.gd")
 
 
 func _init():
-	create_icon_material("icon", WE_CONSTS.ICON_PATHLOOP)
+	create_icon_material("icon", WEConsts.ICON_PATHLOOP)
 	create_material("lines", Color.BISQUE)
 
 
 func _has_gizmo(node):
-	return node is WE_PathLoop
+	return node is WEPathLoop
 
 
 func _get_gizmo_name():
-	return "WE_PathLoop"
+	return "WEPathLoop"
 
 
 func _create_gizmo(node):
-	if node is WE_PathLoop:
+	if node is WEPathLoop:
 		return GIZMO.new()
-	else:
-		return null
+
+	return null

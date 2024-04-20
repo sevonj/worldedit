@@ -1,21 +1,21 @@
+##
 @tool
-extends Path3D
-class_name WE_Path
+class_name WEPath extends Path3D
+
+signal updated
 
 enum {
 	PATH_START,
 	PATH_END,
 }
 
-@export var connection_handle0 := WE_ConnectionHandle.new()
-@export var connection_handle1 := WE_ConnectionHandle.new()
-@export var connected_0: WE_PathJunction
-@export var connected_1: WE_PathJunction
+@export var connection_handle0 := WEConnectionHandle.new()
+@export var connection_handle1 := WEConnectionHandle.new()
+@export var connected_0: WEPathJunction
+@export var connected_1: WEPathJunction
 
 @export var segment_length: float = 4
 @export var samples: Array[Transform3D] = []
-
-signal updated
 
 
 func _init():
@@ -27,7 +27,7 @@ func _ready():
 	regenerate_samples()
 
 
-func connect_path(junction: WE_PathJunction, end: int):
+func connect_path(junction: WEPathJunction, end: int):
 	if !is_instance_valid(junction):
 		push_error("Attempted to connect an invalid junction")
 		return
@@ -111,4 +111,4 @@ func get_center() -> Vector3:
 	var vectors: Array[Vector3] = []
 	for i in curve.point_count:
 		vectors.append(curve.get_point_position(i))
-	return WE_Utility.get_center(vectors) + global_position
+	return WEUtility.get_center(vectors) + global_position

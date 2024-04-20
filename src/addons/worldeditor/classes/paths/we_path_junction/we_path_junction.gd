@@ -1,9 +1,9 @@
 ##
 @tool
-class_name WE_PathJunction extends Node3D
+class_name WEPathJunction extends Node3D
 
-@export var connection_handles: Array[WE_ConnectionHandle] = []
-@export var connection_paths: Array[WE_Path] = []
+@export var connection_handles: Array[WEConnectionHandle] = []
+@export var connection_paths: Array[WEPath] = []
 
 # --- Virtual Methods --- #
 
@@ -31,7 +31,7 @@ func update() -> void:
 		path.update()
 
 
-func connect_path(handle: WE_ConnectionHandle, path: WE_Path) -> void:
+func connect_path(handle: WEConnectionHandle, path: WEPath) -> void:
 	if handle in connection_handles:
 		push_error("Attempted to add a duplicate connection.")
 		return
@@ -39,7 +39,7 @@ func connect_path(handle: WE_ConnectionHandle, path: WE_Path) -> void:
 	connection_paths.append(path)
 
 
-func disconnect_path(handle: WE_ConnectionHandle) -> void:
+func disconnect_path(handle: WEConnectionHandle) -> void:
 	if not handle in connection_handles:
 		return
 
@@ -59,14 +59,14 @@ func _setup_gizmo_coll():
 	var area := Area3D.new()
 	var coll := CollisionShape3D.new()
 	coll.shape = BoxShape3D.new()
-	coll.shape.size = Vector3.ONE * WE_CONSTS.PATHJUNC_GIZMO_SIZE
+	coll.shape.size = Vector3.ONE * WEConsts.PATHJUNC_GIZMO_SIZE
 	add_child(area)
 	area.add_child(coll)
 
 
 ## Removes invalid paths from list. Entries become invalid when the path is freed.
 func _prune_connections():
-	var new_paths: Array[WE_Path] = []
+	var new_paths: Array[WEPath] = []
 	for path in connection_paths:
 		if is_instance_valid(path):
 			new_paths.append(path)

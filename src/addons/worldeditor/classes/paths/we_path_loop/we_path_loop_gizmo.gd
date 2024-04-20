@@ -3,12 +3,12 @@ extends EditorNode3DGizmo
 
 func _redraw():
 	clear()
-	var node: WE_PathLoop = get_node_3d()
-	add_unscaled_billboard(get_plugin().get_material("icon", self), WE_CONSTS.GIZMO_ICON_SIZE)
+	var node: WEPathLoop = get_node_3d()
+	add_unscaled_billboard(get_plugin().get_material("icon", self), WEConsts.GIZMO_ICON_SIZE)
 	draw_lines(node)
 
 
-func draw_lines(node: WE_PathLoop):
+func draw_lines(node: WEPathLoop):
 	""" Lines between path points and origin """
 	var lines = PackedVector3Array()
 	for path in node.paths:

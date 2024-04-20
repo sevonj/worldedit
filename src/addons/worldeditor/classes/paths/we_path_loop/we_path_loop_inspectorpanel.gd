@@ -1,14 +1,14 @@
 @tool
 extends Control
 
-@onready var but_refresh = $but_refresh
+signal refreshed
 
-signal refresh
+@onready var but_refresh = $but_refresh
 
 
 func _ready():
-	but_refresh.pressed.connect(refresh_)
+	but_refresh.pressed.connect(refreshed)
 
 
-func refresh_():
-	refresh.emit()
+func refresh():
+	refreshed.emit()

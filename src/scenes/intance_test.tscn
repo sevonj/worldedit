@@ -22,17 +22,17 @@ script = ExtResource("2_b2666")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WE_Path" type="Path3D" parent="."]
+[node name="WEPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_l4pys")
 script = ExtResource("1_w54jc")
 connection_handle0 = SubResource("Resource_fsb0g")
 connection_handle1 = SubResource("Resource_encxk")
 
-[node name="WE_Mod_Instance" type="Node" parent="WE_Path"]
+[node name="WEModInstance" type="Node" parent="WEPath"]
 script = ExtResource("3_0gunq")
 scene = ExtResource("4_pokkm")
 spacing = 16.0
 point_up = true
 
-[node name="we_mod_road" type="Node" parent="WE_Path"]
+[node name="we_mod_road" type="Node" parent="WEPath"]
 script = ExtResource("5_2t5gj")
