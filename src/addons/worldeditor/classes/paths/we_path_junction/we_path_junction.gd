@@ -1,9 +1,11 @@
+##
 @tool
-extends Node3D
-class_name WE_PathJunction
+class_name WE_PathJunction extends Node3D
 
 @export var connection_handles: Array[WE_ConnectionHandle] = []
 @export var connection_paths: Array[WE_Path] = []
+
+# --- Virtual Methods --- #
 
 
 func _init():
@@ -11,17 +13,7 @@ func _init():
 
 
 func _ready():
-	create_gizmo_coll()
-
-
-func create_gizmo_coll():
-	""" Create a child area collider, which can be picked up by gizmo raycasts """
-	var area := Area3D.new()
-	var coll := CollisionShape3D.new()
-	coll.shape = BoxShape3D.new()
-	coll.shape.size = Vector3.ONE * WE_CONSTS.PATHJUNC_GIZMO_SIZE
-	add_child(area)
-	area.add_child(coll)
+	_setup_gizmo_coll()
 
 
 func _notification(what):
@@ -30,12 +22,16 @@ func _notification(what):
 			update()
 
 
-func update():
+# --- Public --- #
+
+
+func update() -> void:
+	_prune_connections()
 	for path in connection_paths:
 		path.update()
 
 
-func connect_path(handle: WE_ConnectionHandle, path: WE_Path):
+func connect_path(handle: WE_ConnectionHandle, path: WE_Path) -> void:
 	if handle in connection_handles:
 		push_error("Attempted to add a duplicate connection.")
 		return
@@ -43,7 +39,7 @@ func connect_path(handle: WE_ConnectionHandle, path: WE_Path):
 	connection_paths.append(path)
 
 
-func disconnect_path(handle: WE_ConnectionHandle):
+func disconnect_path(handle: WE_ConnectionHandle) -> void:
 	if not handle in connection_handles:
 		return
 
@@ -52,3 +48,26 @@ func disconnect_path(handle: WE_ConnectionHandle):
 			connection_handles.remove_at(i)
 			connection_paths.remove_at(i)
 			break
+
+
+# --- Private --- #
+
+
+## Create an Area3D, which can be picked up by gizmo raycasts.
+## The collider is used to detect dragging things over this junction.
+func _setup_gizmo_coll():
+	var area := Area3D.new()
+	var coll := CollisionShape3D.new()
+	coll.shape = BoxShape3D.new()
+	coll.shape.size = Vector3.ONE * WE_CONSTS.PATHJUNC_GIZMO_SIZE
+	add_child(area)
+	area.add_child(coll)
+
+
+## Removes invalid paths from list. Entries become invalid when the path is freed.
+func _prune_connections():
+	var new_paths: Array[WE_Path] = []
+	for path in connection_paths:
+		if is_instance_valid(path):
+			new_paths.append(path)
+	connection_paths = new_paths
