@@ -31,6 +31,8 @@ func update() -> void:
 		path.update()
 
 
+## Connect a path to this junction.
+## If you aren't the pathd, don't call this. Call connect_path() on the path instead.
 func connect_path(handle: WEConnectionHandle, path: WEPath) -> void:
 	if handle in connection_handles:
 		push_error("Attempted to add a duplicate connection.")

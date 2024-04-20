@@ -17,6 +17,8 @@ enum {
 @export var segment_length: float = 4
 @export var samples: Array[Transform3D] = []
 
+# --- Virtual Methods --- #
+
 
 func _init():
 	curve_changed.connect(regenerate_samples)
@@ -27,6 +29,11 @@ func _ready():
 	regenerate_samples()
 
 
+# --- Public --- #
+
+
+## This will connect this path to a junction.
+## Connection is initated by this function, not the one on junction.
 func connect_path(junction: WEPathJunction, end: int):
 	if !is_instance_valid(junction):
 		push_error("Attempted to connect an invalid junction")
@@ -90,8 +97,8 @@ func regenerate_samples():
 	updated.emit()
 
 
+## Recenters the origin to the average of curve points.
 func recenter():
-	""" Recenters the origin to the average of curve points. """
 	var old_origin := global_position
 	var new_origin := get_center()
 	#§get_child(0).global_position = new_origin
@@ -103,8 +110,8 @@ func recenter():
 		curve.set_point_position(i, old_pos - delta_pos)
 
 
+## Returns the middle of curve points
 func get_center() -> Vector3:
-	""" Returns the middle of curve points """
 	if curve.point_count == 0:
 		return global_position
 
@@ -112,3 +119,6 @@ func get_center() -> Vector3:
 	for i in curve.point_count:
 		vectors.append(curve.get_point_position(i))
 	return WEUtility.get_center(vectors) + global_position
+
+
+# --- Private --- #
