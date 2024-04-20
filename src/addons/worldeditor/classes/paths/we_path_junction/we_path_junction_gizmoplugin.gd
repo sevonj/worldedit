@@ -6,11 +6,11 @@ func _init():
 
 
 func _has_gizmo(node):
-	return node is WE_PathJunction
+	return node is WEPathJunction
 
 
 func _get_gizmo_name():
-	return "WE_PathJunction"
+	return "WEPathJunction"
 
 
 func _redraw(gizmo):
@@ -18,7 +18,7 @@ func _redraw(gizmo):
 
 	# Add collision box to make this clickable
 	var colbox = BoxMesh.new()
-	colbox.size = Vector3.ONE * WE_CONSTS.PATHJUNC_GIZMO_SIZE
+	colbox.size = Vector3.ONE * WEConsts.PATHJUNC_GIZMO_SIZE
 	gizmo.add_collision_triangles(colbox.generate_triangle_mesh())
 
 	# Add visual box to make this visible

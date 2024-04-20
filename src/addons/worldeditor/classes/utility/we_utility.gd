@@ -1,4 +1,5 @@
-class_name WE_Utility
+class_name WEUtility
+
 
 static func get_center(vectors: Array[Vector3]) -> Vector3:
 	""" Returns the middle of 3d points """

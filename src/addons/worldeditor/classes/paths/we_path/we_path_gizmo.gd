@@ -1,13 +1,12 @@
 extends EditorNode3DGizmo
 
-const CONNECT_HANDLE_OFFSET := Vector3.BACK
-
 enum HandleIdx {
 	CONNECT_0,  # Drag this onto a juntion (start)
 	CONNECT_1,  # Drag this onto a juntion (end)
 	DISCONNECT_0,  # Drag this away from a juntion (start)
 	DISCONNECT_1,  # Drag this away from a juntion (end)
 }
+const CONNECT_HANDLE_OFFSET := Vector3.BACK
 
 # Track the handle position as they're dragged.
 var connect_0_pos := Vector3.ZERO
@@ -18,7 +17,7 @@ var dragging := false
 var hovered_collider
 
 
-func _get_handle_name(id, secondary):
+func _get_handle_name(id, _secondary):
 	match id:
 		HandleIdx.CONNECT_0:
 			return "Path Connection 0"
@@ -32,18 +31,18 @@ func _get_handle_name(id, secondary):
 
 func _redraw():
 	clear()
-	var node: WE_Path = get_node_3d()
+	var node: WEPath = get_node_3d()
 	if !dragging:
 		reset_handles()
 	if node.curve.point_count < 2:
 		add_unscaled_billboard(
-			get_plugin().get_material("path_icon", self), WE_CONSTS.GIZMO_ICON_SIZE
+			get_plugin().get_material("path_icon", self), WEConsts.GIZMO_ICON_SIZE
 		)
 	draw_connectors(node)
 	# draw_samples(node)
 
 
-func draw_connectors(node: WE_Path):
+func draw_connectors(node: WEPath):
 	""" Draw handles for Connecting / Disconnecting junctions """
 
 	var con_handles := PackedVector3Array()
@@ -73,7 +72,7 @@ func draw_connectors(node: WE_Path):
 		add_handles(dis_handles, get_plugin().get_material("disconnect", self), dis_handle_ids)
 
 
-func draw_samples(node: WE_Path):
+func draw_samples(node: WEPath):
 	""" For debug purposes """
 	var lines = PackedVector3Array()
 	for sample in node.samples:
@@ -84,8 +83,8 @@ func draw_samples(node: WE_Path):
 		add_lines(lines, get_plugin().get_material("connect", self), false)
 
 
-func _set_handle(handle_id, secondary, camera, screen_pos) -> void:
-	var node: WE_Path = get_node_3d()
+func _set_handle(handle_id, _secondary, camera, screen_pos) -> void:
+	var node: WEPath = get_node_3d()
 	dragging = true
 
 	# Calculate new handle position
@@ -108,8 +107,8 @@ func _set_handle(handle_id, secondary, camera, screen_pos) -> void:
 	_redraw()
 
 
-func _commit_handle(id, secondary, restore, cancel):
-	var node: WE_Path = get_node_3d()
+func _commit_handle(id, _secondary, _restore, _cancel):
+	var node: WEPath = get_node_3d()
 	dragging = false
 
 	match id:
@@ -132,20 +131,20 @@ func _commit_handle(id, secondary, restore, cancel):
 	_redraw()
 
 
-func set_start_position(node: WE_Path, pos: Vector3):
+func set_start_position(node: WEPath, pos: Vector3):
 	if node.curve.point_count == 0:
 		return
 	node.curve.set_point_position(0, pos)
 
 
-func set_end_position(node: WE_Path, pos: Vector3):
+func set_end_position(node: WEPath, pos: Vector3):
 	if node.curve.point_count == 0:
 		return
 	node.curve.set_point_position(node.curve.point_count - 1, pos)
 
 
 func reset_handles():
-	var node: WE_Path = get_node_3d()
+	var node: WEPath = get_node_3d()
 	hovered_collider = null
 	var len := 0.
 	if node.curve.point_count >= 2:
@@ -163,7 +162,7 @@ func reset_handles():
 
 func sample_curve_start() -> Transform3D:
 	""" This extra step is needed because the curve may have less than 2 points """
-	var node: WE_Path = get_node_3d()
+	var node: WEPath = get_node_3d()
 	match node.curve.point_count:
 		0:
 			return Transform3D()
@@ -177,7 +176,7 @@ func sample_curve_start() -> Transform3D:
 
 func sample_curve_end() -> Transform3D:
 	""" This extra step is needed because the curve may have less than 2 points """
-	var node: WE_Path = get_node_3d()
+	var node: WEPath = get_node_3d()
 	match node.curve.point_count:
 		0:
 			return Transform3D()

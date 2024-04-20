@@ -1,10 +1,10 @@
+##
 @tool
-extends Node3D
-class_name WE_PathLoop
-
-@export var paths: Array[WE_Path] = []
+class_name WEPathLoop extends Node3D
 
 signal updated
+
+@export var paths: Array[WEPath] = []
 
 
 func _ready():
@@ -29,12 +29,14 @@ func get_samples() -> Array[Transform3D]:
 		samples.append_array(path.samples)
 	return samples
 
+
 func get_path_points() -> Array[Vector3]:
 	var points: Array[Vector3] = []
 	for path in paths:
 		for i in path.curve.point_count:
 			points.append(path.curve.get_point_position(i) + path.global_position)
 	return points
+
 
 func get_normal() -> Vector3:
 	""" Calculate a normal vector for the loop from path curve points.
@@ -49,10 +51,11 @@ func recenter() -> void:
 		return
 	global_position = get_center()
 
+
 func get_center() -> Vector3:
 	if paths.is_empty():
 		return global_position
 	var vectors: Array[Vector3] = []
 	for path in paths:
 		vectors.append(path.get_center())
-	return WE_Utility.get_center(vectors)
+	return WEUtility.get_center(vectors)

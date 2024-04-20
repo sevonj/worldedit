@@ -1,4 +1,4 @@
-class_name WE_CONSTS
+class_name WEConsts
 
 # Gizmos
 const GIZMO_ICON_SIZE: float = .024

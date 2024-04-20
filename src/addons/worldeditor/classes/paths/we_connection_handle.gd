@@ -1,4 +1,3 @@
-extends Resource
-class_name WE_ConnectionHandle
-# This is an empty class.
-# It's used as an identifier for each end of a WE_Path
+## This is an empty class.
+## Instances are used as an identifiers for each end connections of a WEPath
+class_name WEConnectionHandle extends Resource

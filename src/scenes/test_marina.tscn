@@ -1,0 +1,220 @@
+[gd_scene load_steps=23 format=3 uid="uid://1nf6upsn3r27"]
+
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path_junction/we_path_junction.gd" id="1_saoly"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_connection_handle.gd" id="2_h4467"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path/we_path.gd" id="3_7qxoh"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path_loop/we_path_loop.gd" id="4_swskh"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/modifiers/we_mod_patch/we_mod_patch.cs" id="5_kr1mm"]
+
+[sub_resource type="Resource" id="Resource_kcqwe"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_mj3qp"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_vr1xe"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_ji5jc"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_1tk8b"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_w12br"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_hnf0s"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_s0xx4"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_76115"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_cwuh4"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Resource" id="Resource_66hix"]
+script = ExtResource("2_h4467")
+
+[sub_resource type="Curve3D" id="Curve3D_02we4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.50729, 0, -79.9541, 0, 0, 0, 0, 0, 0, -2.50729, 0, 79.9541),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_m6oh1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.5, 0, 0, 0, 0, 0, 0, 0, 0, 11.5, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_sqb5j"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.57525, 0, -76.8029, 0, 0, 0, 0, 0, 0, 9.57525, 0, 76.8029),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_panf0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.3529, 0, -1.90533, 0, 0, 0, 0, 0, 0, -9.3529, 0, 1.90533),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_0r13d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.902, 0, -76.2116, 0, 0, 0, 0, 0, 0, 6.902, 0, 76.2116),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Curve3D" id="Curve3D_w48cm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12.0261, 0, 1.31401, 0, 0, 0, 0, 0, 0, 12.0261, 0, -1.314),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[node name="main" type="Node3D"]
+
+[node name="path" type="Node3D" parent="."]
+
+[node name="WEPathJunction" type="Node3D" parent="path" node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150)
+script = ExtResource("1_saoly")
+connection_handles = Array[ExtResource("2_h4467")]([SubResource("Resource_kcqwe"), SubResource("Resource_mj3qp")])
+connection_paths = [NodePath("../WEPath2"), NodePath("../WEPath3")]
+
+[node name="WEPathJunction3" type="Node3D" parent="path" node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 150)
+script = ExtResource("1_saoly")
+connection_handles = Array[ExtResource("2_h4467")]([SubResource("Resource_vr1xe"), SubResource("Resource_mj3qp"), SubResource("Resource_ji5jc")])
+connection_paths = [NodePath("../WEPath3"), NodePath("../WEPath4"), NodePath("../WEPath7")]
+
+[node name="WEPathJunction4" type="Node3D" parent="path" node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1505, 0, -3.60583)
+script = ExtResource("1_saoly")
+connection_handles = Array[ExtResource("2_h4467")]([SubResource("Resource_vr1xe"), SubResource("Resource_1tk8b")])
+connection_paths = [NodePath("../WEPath4"), NodePath("../WEPath5")]
+
+[node name="WEPathJunction5" type="Node3D" parent="path" node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.8563, 0, 0.204828)
+script = ExtResource("1_saoly")
+connection_handles = Array[ExtResource("2_h4467")]([SubResource("Resource_w12br"), SubResource("Resource_hnf0s")])
+connection_paths = [NodePath("../WEPath5"), NodePath("../WEPath6")]
+
+[node name="WEPathJunction6" type="Node3D" parent="path" node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.0523, 0, 152.628)
+script = ExtResource("1_saoly")
+connection_handles = Array[ExtResource("2_h4467")]([SubResource("Resource_s0xx4"), SubResource("Resource_76115")])
+connection_paths = [NodePath("../WEPath6"), NodePath("../WEPath7")]
+
+[node name="WEPathJunction7" type="Node3D" parent="path" node_paths=PackedStringArray("connection_paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01458, 0, -9.90814)
+script = ExtResource("1_saoly")
+connection_handles = Array[ExtResource("2_h4467")]([SubResource("Resource_cwuh4"), SubResource("Resource_66hix")])
+connection_paths = [NodePath("../WEPath2")]
+
+[node name="WEPath2" type="Path3D" parent="path" node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50729, 0, 70.0459)
+curve = SubResource("Curve3D_02we4")
+script = ExtResource("3_7qxoh")
+connection_handle0 = SubResource("Resource_66hix")
+connection_handle1 = SubResource("Resource_kcqwe")
+connected_0 = NodePath("../WEPathJunction7")
+connected_1 = NodePath("../WEPathJunction")
+samples = Array[Transform3D]([Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 5.01458, 0, -9.90814), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.88922, 0, -5.91044), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.76385, 0, -1.91274), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.63849, 0, 2.08496), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.51312, 0, 6.08266), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.38776, 0, 10.0804), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.26239, 0, 14.0781), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.13703, 0, 18.0758), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 4.01166, 0, 22.0735), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.8863, 0, 26.0712), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.76094, 0, 30.0689), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.63557, 0, 34.0666), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.51021, 0, 38.0643), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.38484, 0, 42.062), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.25948, 0, 46.0597), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.13411, 0, 50.0574), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 3.00875, 0, 54.0551), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.88338, 0, 58.0528), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.75802, 0, 62.0505), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.63266, 0, 66.0482), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.50729, 0, 70.0459), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.38193, 0, 74.0436), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.25656, 0, 78.0413), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.1312, 0, 82.039), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 2.00583, 0, 86.0367), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.88047, 0, 90.0344), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.7551, 0, 94.0321), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.62974, 0, 98.0298), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.50437, 0, 102.028), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.37901, 0, 106.025), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.25364, 0, 110.023), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.12828, 0, 114.021), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 1.00292, 0, 118.018), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.877553, 0, 122.016), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.752188, 0, 126.014), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.626823, 0, 130.011), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.50146, 0, 134.009), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.376094, 0, 138.007), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.25073, 0, 142.005), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0.125365, 0, 146.002), Transform3D(-0.999509, 0, 0.0313437, 0, 1, 0, -0.0313437, 0, -0.999509, 0, 0, 150)])
+
+[node name="WEPath3" type="Path3D" parent="path" node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 150)
+curve = SubResource("Curve3D_m6oh1")
+script = ExtResource("3_7qxoh")
+connection_handle0 = SubResource("Resource_vr1xe")
+connection_handle1 = SubResource("Resource_mj3qp")
+connected_0 = NodePath("../WEPathJunction3")
+connected_1 = NodePath("../WEPathJunction")
+samples = Array[Transform3D]([Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -23, 0, 150), Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -19.1667, 0, 150), Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -15.3333, 0, 150), Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -11.5, 0, 150), Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -7.66667, 0, 150), Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -3.83334, 0, 150), Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0, 150)])
+
+[node name="WEPath4" type="Path3D" parent="path" node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5752, 0, 73.1971)
+curve = SubResource("Curve3D_sqb5j")
+script = ExtResource("3_7qxoh")
+connection_handle0 = SubResource("Resource_vr1xe")
+connection_handle1 = SubResource("Resource_mj3qp")
+connected_0 = NodePath("../WEPathJunction4")
+connected_1 = NodePath("../WEPathJunction3")
+samples = Array[Transform3D]([Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -42.1505, 0, -3.60583), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -41.6595, 0, 0.332779), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -41.1684, 0, 4.27139), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -40.6774, 0, 8.21), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -40.1863, 0, 12.1486), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -39.6953, 0, 16.0872), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -39.2043, 0, 20.0258), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -38.7132, 0, 23.9644), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -38.2222, 0, 27.903), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -37.7312, 0, 31.8417), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -37.2401, 0, 35.7803), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -36.7491, 0, 39.7189), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -36.258, 0, 43.6575), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -35.767, 0, 47.5961), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -35.276, 0, 51.5347), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -34.7849, 0, 55.4733), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -34.2939, 0, 59.4119), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -33.8029, 0, 63.3505), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -33.3118, 0, 67.2891), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -32.8208, 0, 71.2277), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -32.3297, 0, 75.1663), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -31.8387, 0, 79.1049), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -31.3477, 0, 83.0436), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -30.8566, 0, 86.9822), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -30.3656, 0, 90.9208), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -29.8745, 0, 94.8594), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -29.3835, 0, 98.798), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -28.8925, 0, 102.737), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -28.4014, 0, 106.675), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -27.9104, 0, 110.614), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -27.4194, 0, 114.552), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -26.9283, 0, 118.491), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -26.4373, 0, 122.43), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -25.9462, 0, 126.368), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -25.4552, 0, 130.307), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -24.9642, 0, 134.245), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -24.4731, 0, 138.184), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -23.9821, 0, 142.123), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -23.491, 0, 146.061), Transform3D(-0.992318, 0, -0.123715, 0, 1, 0, 0.123715, 0, -0.992318, -23, 0, 150)])
+
+[node name="WEPath5" type="Path3D" parent="path" node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.5034, 0, -1.7005)
+curve = SubResource("Curve3D_panf0")
+script = ExtResource("3_7qxoh")
+connection_handle0 = SubResource("Resource_1tk8b")
+connection_handle1 = SubResource("Resource_w12br")
+connected_0 = NodePath("../WEPathJunction4")
+connected_1 = NodePath("../WEPathJunction5")
+samples = Array[Transform3D]([Transform3D(-0.199615, 0, 0.979874, 0, 1, 0, -0.979874, 0, -0.199615, -42.1505, 0, -3.60583), Transform3D(-0.199615, 0, 0.979874, 0, 1, 0, -0.979874, 0, -0.199615, -45.8917, 0, -2.8437), Transform3D(-0.199615, 0, 0.979874, 0, 1, 0, -0.979874, 0, -0.199615, -49.6328, 0, -2.08157), Transform3D(-0.199616, 0, 0.979874, 0, 1, 0, -0.979874, 0, -0.199616, -53.374, 0, -1.31944), Transform3D(-0.199615, 0, 0.979874, 0, 1, 0, -0.979874, 0, -0.199615, -57.1151, 0, -0.557304), Transform3D(-0.199615, 0, 0.979874, 0, 1, 0, -0.979874, 0, -0.199615, -60.8563, 0, 0.204828)])
+
+[node name="WEPath6" type="Path3D" parent="path" node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9543, 0, 76.4164)
+curve = SubResource("Curve3D_0r13d")
+script = ExtResource("3_7qxoh")
+connection_handle0 = SubResource("Resource_hnf0s")
+connection_handle1 = SubResource("Resource_s0xx4")
+connected_0 = NodePath("../WEPathJunction5")
+connected_1 = NodePath("../WEPathJunction6")
+samples = Array[Transform3D]([Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -60.8563, 0, 0.204826), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -60.5023, 0, 4.11311), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -60.1484, 0, 8.0214), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -59.7945, 0, 11.9297), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -59.4405, 0, 15.838), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -59.0866, 0, 19.7463), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -58.7326, 0, 23.6546), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -58.3787, 0, 27.5628), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -58.0247, 0, 31.4711), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -57.6708, 0, 35.3794), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -57.3168, 0, 39.2877), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -56.9629, 0, 43.196), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -56.6089, 0, 47.1043), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -56.255, 0, 51.0126), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -55.901, 0, 54.9209), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -55.5471, 0, 58.8291), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -55.1931, 0, 62.7374), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -54.8392, 0, 66.6457), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -54.4852, 0, 70.554), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -54.1313, 0, 74.4623), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -53.7773, 0, 78.3706), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -53.4234, 0, 82.2789), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -53.0694, 0, 86.1871), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -52.7155, 0, 90.0954), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -52.3615, 0, 94.0037), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -52.0076, 0, 97.912), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -51.6536, 0, 101.82), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -51.2997, 0, 105.729), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -50.9457, 0, 109.637), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -50.5918, 0, 113.545), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -50.2378, 0, 117.453), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -49.8839, 0, 121.362), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -49.5299, 0, 125.27), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -49.176, 0, 129.178), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -48.822, 0, 133.087), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -48.4681, 0, 136.995), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -48.1141, 0, 140.903), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -47.7602, 0, 144.811), Transform3D(-0.995924, 0, -0.0901946, 0, 1, 0, 0.0901945, 0, -0.995924, -47.4062, 0, 148.72), Transform3D(-0.995924, 0, -0.0901945, 0, 1, 0, 0.0901945, 0, -0.995924, -47.0523, 0, 152.628)])
+
+[node name="WEPath7" type="Path3D" parent="path" node_paths=PackedStringArray("connected_0", "connected_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0261, 0, 151.314)
+curve = SubResource("Curve3D_w48cm")
+script = ExtResource("3_7qxoh")
+connection_handle0 = SubResource("Resource_76115")
+connection_handle1 = SubResource("Resource_ji5jc")
+connected_0 = NodePath("../WEPathJunction6")
+connected_1 = NodePath("../WEPathJunction3")
+samples = Array[Transform3D]([Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -47.0523, 0, 152.628), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -43.6163, 0, 152.253), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -40.1802, 0, 151.877), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -36.7442, 0, 151.502), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -33.3081, 0, 151.126), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -29.8721, 0, 150.751), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -26.436, 0, 150.375), Transform3D(0.108616, 0, -0.994084, 0, 1, 0, 0.994084, 0, 0.108616, -23, 0, 150)])
+
+[node name="WEPathLoop" type="Node3D" parent="path" node_paths=PackedStringArray("paths")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.2648, 0, 74.8067)
+script = ExtResource("4_swskh")
+paths = [NodePath("../WEPath4"), NodePath("../WEPath5"), NodePath("../WEPath6"), NodePath("../WEPath7")]
+
+[node name="we_mod_patch" type="Node" parent="path/WEPathLoop"]
+script = ExtResource("5_kr1mm")
+
+[node name="annotations" type="Node3D" parent="."]
+
+[node name="bay" type="Label3D" parent="annotations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7921, 0, 48.0504)
+pixel_size = 0.001
+billboard = 1
+fixed_size = true
+text = "bay"
+
+[node name="bay2" type="Label3D" parent="annotations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.74, 0, 124.221)
+pixel_size = 0.001
+billboard = 1
+fixed_size = true
+text = "bay"
+
+[node name="sea" type="Label3D" parent="annotations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7921, 0, -94.9951)
+pixel_size = 0.001
+billboard = 1
+fixed_size = true
+text = "sea
+"

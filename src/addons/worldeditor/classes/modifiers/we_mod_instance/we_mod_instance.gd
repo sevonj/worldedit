@@ -1,5 +1,5 @@
 @tool
-class_name WE_Mod_Instance
+class_name WEModInstance
 extends Node
 
 @export var scene: PackedScene:
@@ -32,13 +32,13 @@ func _set_point_up(value: bool):
 
 # Configuration
 func _get_configuration_warnings():
-	if !get_parent() is WE_Path:
-		return "Parent is not a WE_Path!"
+	if !get_parent() is WEPath:
+		return "Parent is not a WEPath!"
 
 
 # Main
 func _ready():
-	var parent: WE_Path = get_parent()
+	var parent: WEPath = get_parent()
 	if !is_instance_valid(parent):
 		return
 	parent.updated.connect(refresh)
@@ -50,15 +50,15 @@ func setup_multimesh():
 	add_child(multimeshinstance)
 	multimeshinstance.multimesh = multimesh
 	multimesh.transform_format = MultiMesh.TRANSFORM_3D
-	multimesh.mesh = WE_CONSTS.MDL_ARROW
-	multimesh.mesh.surface_set_material(0, WE_CONSTS.MAT_GIZMO_PRIMARYLIGHT)
+	multimesh.mesh = WEConsts.MDL_ARROW
+	multimesh.mesh.surface_set_material(0, WEConsts.MAT_GIZMO_PRIMARYLIGHT)
 
 
 func refresh():
 	clear_instances()
 	if scene == null:
 		return
-	var parent: WE_Path = get_parent()
+	var parent: WEPath = get_parent()
 	if !is_instance_valid(parent):
 		return
 	var transforms := get_instance_transforms(parent, spacing)
@@ -91,7 +91,7 @@ func update_multimesh(transforms: Array[Transform3D]):
 		multimesh.set_instance_transform(i, transforms[i])
 
 
-func get_instance_transforms(parent: WE_Path, spacing: float) -> Array[Transform3D]:
+func get_instance_transforms(parent: WEPath, spacing: float) -> Array[Transform3D]:
 	var point_count = parent.curve.point_count
 	var transforms: Array[Transform3D] = []
 
