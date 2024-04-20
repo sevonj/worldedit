@@ -5,21 +5,11 @@ extends EditorPlugin
 
 var gizmoplugins = [
 	preload("res://addons/worldeditor/classes/paths/we_path/we_path_gizmoplugin.gd").new(),
-	(
-		preload(
-			"res://addons/worldeditor/classes/paths/we_path_junction/we_path_junction_gizmoplugin.gd"
-		)
-		. new()
-	),
-	preload("res://addons/worldeditor/classes/paths/we_path_loop/we_path_loop_gizmoplugin.gd").new()
+	preload("res://addons/worldeditor/classes/paths/we_path_junction/we_path_junction_gizmoplugin.gd").new(),
+	preload("res://addons/worldeditor/classes/paths/we_path_loop/we_path_loop_gizmoplugin.gd").new(),
 ]
 var inspectorplugins = [
-	(
-		preload(
-			"res://addons/worldeditor/classes/paths/we_path_loop/we_path_loop_inspectorplugin.gd"
-		)
-		. new()
-	)
+	preload("res://addons/worldeditor/classes/paths/we_path_loop/we_path_loop_inspectorplugin.gd").new()
 ]
 
 

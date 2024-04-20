@@ -20,4 +20,4 @@ project/assembly_name="WorldEditor"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/worldeditor/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg", "res://addons/worldeditor/plugin.cfg")
