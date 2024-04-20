@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://cabgccy7a14br"]
+
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_path/we_path.gd" id="1_w54jc"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/paths/we_connection_handle.gd" id="2_b2666"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/modifiers/we_mod_instance/we_mod_instance.gd" id="3_0gunq"]
+[ext_resource type="PackedScene" uid="uid://616ylmmns21i" path="res://assets/models/streetlight.glb" id="4_pokkm"]
+[ext_resource type="Script" path="res://addons/worldeditor/classes/modifiers/we_mod_road/we_mod_road.cs" id="5_2t5gj"]
+
+[sub_resource type="Curve3D" id="Curve3D_l4pys"]
+_data = {
+"points": PackedVector3Array(-47.2008, -4.94032, -9.52456, 47.2008, 4.94032, 9.52456, -31.1446, -1.50128, 15.4477, -27.0629, -3.40681, 4.57343, 27.0629, 3.40681, -4.57343, 6.61001, 13.2082, -19.6508, -24.1117, 0.275513, 1.23352, 24.1117, -0.275513, -1.23352, 28.6512, 0.260986, 15.4007, 25.3314, 0.639376, 15.0069, -25.3314, -0.639376, -15.0069, 32.2515, -0.459229, -24.4554),
+"tilts": PackedFloat32Array(0, 1.11717, -0.111352, 0)
+}
+point_count = 4
+up_vector_enabled = false
+
+[sub_resource type="Resource" id="Resource_fsb0g"]
+script = ExtResource("2_b2666")
+
+[sub_resource type="Resource" id="Resource_encxk"]
+script = ExtResource("2_b2666")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WE_Path" type="Path3D" parent="."]
+curve = SubResource("Curve3D_l4pys")
+script = ExtResource("1_w54jc")
+connection_handle0 = SubResource("Resource_fsb0g")
+connection_handle1 = SubResource("Resource_encxk")
+
+[node name="WE_Mod_Instance" type="Node" parent="WE_Path"]
+script = ExtResource("3_0gunq")
+scene = ExtResource("4_pokkm")
+spacing = 16.0
+point_up = true
+
+[node name="we_mod_road" type="Node" parent="WE_Path"]
+script = ExtResource("5_2t5gj")
