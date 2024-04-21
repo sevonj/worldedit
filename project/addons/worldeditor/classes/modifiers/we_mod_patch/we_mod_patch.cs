@@ -16,7 +16,7 @@ public partial class we_mod_patch : Node
 		try
 		{
 			Node3D parent = (Node3D)GetParent();
-			parent.Connect("updated", Callable.From(() => Update()));
+			parent.Connect("updated", Callable.From(() => Refresh()));
 		}
 		catch (Exception e)
 		{
@@ -24,7 +24,7 @@ public partial class we_mod_patch : Node
 		}
 	}
 
-	public void Update()
+	public void Refresh()
 	{
 		Node3D parent;
 
@@ -38,7 +38,7 @@ public partial class we_mod_patch : Node
 		}
 		catch (Exception e)
 		{
-			GD.PushError("Update failed.", e);
+			GD.PushError("Refresh failed.", e);
 		}
 
 	}

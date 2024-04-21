@@ -51,7 +51,7 @@ func connect_path(junction: WEPathJunction, end: int):
 			connected_1 = junction
 			junction.connect_path(connection_handle1, self)
 
-	update()
+	refresh()
 
 
 func disconnect_path(end: int):
@@ -64,10 +64,10 @@ func disconnect_path(end: int):
 			if is_instance_valid(connected_1):
 				connected_1.disconnect_path(connection_handle1)
 			connected_1 = null
-	update()
+	refresh()
 
 
-func update():
+func refresh():
 	# We do not want scale or rotation.
 	transform.basis = Basis()
 
