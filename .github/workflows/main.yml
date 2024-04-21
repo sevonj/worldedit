@@ -1,4 +1,4 @@
-name: Static checks
+name: CI
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
       - uses: Scony/godot-gdscript-toolkit@master
 
       - name: Check linting
-        run: gdlint src/addons/worldeditor/classes
+        run: gdlint project/addons/worldeditor/classes
 
       - name: Check formatting
-        run: gdformat --check src/addons/worldeditor/classes
+        run: gdformat --check project/addons/worldeditor/classes
