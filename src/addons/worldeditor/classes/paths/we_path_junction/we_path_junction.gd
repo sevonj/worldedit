@@ -68,8 +68,15 @@ func _setup_gizmo_coll():
 
 ## Removes invalid paths from list. Entries become invalid when the path is freed.
 func _prune_connections():
+	if connection_paths.size() != connection_handles.size():
+		push_error("connection_paths.size() != connection_handles.size()")
 	var new_paths: Array[WEPath] = []
-	for path in connection_paths:
+	var new_handles: Array[WEConnectionHandle] = []
+	for i in connection_paths.size():
+		var path := connection_paths[i]
+		var handle := connection_handles[i]
 		if is_instance_valid(path):
 			new_paths.append(path)
+			new_handles.append(handle)
 	connection_paths = new_paths
+	connection_handles = new_handles
