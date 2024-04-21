@@ -29,5 +29,5 @@ jobs:
           godot-version: '4.2.1'
           godot-net: 'true'
           project_dir: 'src'
-          paths: 'res://addons/worldedit/tests'
+          paths: 'res://addons/worldeditor/tests/'
           
