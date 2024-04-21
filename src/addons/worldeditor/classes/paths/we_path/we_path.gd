@@ -39,6 +39,10 @@ func connect_path(junction: WEPathJunction, end: int):
 		push_error("Attempted to connect an invalid junction")
 		return
 
+	# Add points to curve if we don't have enough already.
+	while curve.point_count < 2:
+		curve.add_point(Vector3.ZERO)
+
 	match end:
 		PATH_START:
 			connected_0 = junction
