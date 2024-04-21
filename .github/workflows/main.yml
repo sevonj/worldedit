@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: MikeSchulze/gdUnit4-action@v1
+      - uses: MikeSchulze/gdUnit4-action@v1.0.5
         with:
           godot-version: '4.2.1'
           godot-net: 'true'
