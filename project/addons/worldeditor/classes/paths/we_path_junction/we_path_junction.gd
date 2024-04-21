@@ -19,16 +19,16 @@ func _ready():
 func _notification(what):
 	match what:
 		NOTIFICATION_TRANSFORM_CHANGED:
-			update()
+			refresh()
 
 
 # --- Public --- #
 
 
-func update() -> void:
+func refresh() -> void:
 	_prune_connections()
 	for path in connection_paths:
-		path.update()
+		path.refresh()
 
 
 ## Connect a path to this junction.

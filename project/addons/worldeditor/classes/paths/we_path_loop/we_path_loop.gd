@@ -8,10 +8,10 @@ signal updated
 
 
 func _ready():
-	update()
+	refresh()
 
 
-func update():
+func refresh():
 	recenter()
 	updated.emit()
 

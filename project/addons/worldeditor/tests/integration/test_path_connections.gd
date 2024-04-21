@@ -89,7 +89,7 @@ func test_prune_junction():
 	path3.connect_path(junc, WEPath.PATH_START)
 	# Free path2
 	path2.free()
-	junc.update() # Deletion doesn't update junction (yet)
+	junc.refresh()  # Deletion doesn't update junction (yet)
 	# Check connections
 	assert_int(junc.connection_handles.size()).is_equal(2)
 	assert_int(junc.connection_paths.size()).is_equal(2)

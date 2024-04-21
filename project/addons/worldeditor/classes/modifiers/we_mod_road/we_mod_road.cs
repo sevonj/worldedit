@@ -17,7 +17,7 @@ public partial class we_mod_road : Node
 		try
 		{
 			Path3D parent = (Path3D)GetParent();
-			parent.Connect("updated", Callable.From(() => Update()));
+			parent.Connect("updated", Callable.From(() => Refresh()));
 		}
 		catch (Exception e)
 		{
@@ -25,7 +25,7 @@ public partial class we_mod_road : Node
 		}
 	}
 
-	public void Update()
+	public void Refresh()
 	{
 		Path3D path;
 
@@ -37,7 +37,7 @@ public partial class we_mod_road : Node
 		}
 		catch (Exception e)
 		{
-			GD.PushError("Update failed.", e);
+			GD.PushError("Refresh failed.", e);
 		}
 
 	}
