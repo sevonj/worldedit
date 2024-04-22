@@ -116,7 +116,12 @@ func _commit_handle(id, _secondary, _restore, _cancel):
 	# Disconnect
 	elif id == HandleIdx.DISCONNECT_0 or id == HandleIdx.DISCONNECT_1:
 		node.disconnect_path(end)
-		set_end_position(node, _connect_1_pos)
+		# Move disconnected end to drag position
+		if end == WEPath.PATH_START:
+			node.curve.set_point_position(0, _connect_0_pos)
+		else:
+			node.curve.set_point_position(node.curve.point_count - 1, _connect_1_pos)
+
 
 	reset_handles()
 	_redraw()
@@ -152,18 +157,6 @@ func _draw_connector_handles(node: WEPath):
 		add_handles(con_handles, get_plugin().get_material("connect", self), con_handle_ids)
 	if dis_handles.size() > 0:
 		add_handles(dis_handles, get_plugin().get_material("disconnect", self), dis_handle_ids)
-
-
-func set_start_position(node: WEPath, pos: Vector3):
-	if node.curve.point_count == 0:
-		return
-	node.curve.set_point_position(0, pos)
-
-
-func set_end_position(node: WEPath, pos: Vector3):
-	if node.curve.point_count == 0:
-		return
-	node.curve.set_point_position(node.curve.point_count - 1, pos)
 
 
 func reset_handles():
