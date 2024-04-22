@@ -123,3 +123,16 @@ func test_prune_junction():
 	assert_int(junc.connection_paths.size()).is_equal(2)
 	assert_object(junc.connection_handles[0]).is_same(path1.connection_handle0)
 	assert_object(junc.connection_handles[1]).is_same(path3.connection_handle0)
+
+
+func test_disconnect_all_deletes_junction():
+	var junc: WEPathJunction = auto_free(WEPathJunction.new())
+	var path: WEPath = auto_free(WEPath.new())
+	path.curve = Curve3D.new()
+	path.curve.add_point(Vector3.ZERO)
+	path.curve.add_point(Vector3.ONE)
+	# Connect paths
+	path.connect_path(junc, WEPath.PATH_START)
+	path.disconnect_path(WEPath.PATH_START)
+	# Check
+	assert_bool(junc.is_queued_for_deletion()).is_true()

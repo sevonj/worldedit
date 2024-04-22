@@ -122,7 +122,6 @@ func _commit_handle(id, _secondary, _restore, _cancel):
 		else:
 			node.curve.set_point_position(node.curve.point_count - 1, _connect_1_pos)
 
-
 	reset_handles()
 	_redraw()
 
