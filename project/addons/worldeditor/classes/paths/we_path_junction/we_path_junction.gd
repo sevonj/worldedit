@@ -51,6 +51,9 @@ func disconnect_path(handle: WEConnectionHandle) -> void:
 			connection_paths.remove_at(i)
 			break
 
+	if connection_handles.is_empty():
+		queue_free()
+
 
 # --- Private --- #
 
