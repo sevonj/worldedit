@@ -9,8 +9,8 @@ enum {
 	PATH_END,
 }
 
-@export var connection_handle0 := WEConnectionHandle.new()
-@export var connection_handle1 := WEConnectionHandle.new()
+@export var connection_handle0 := WEConnectionHandle.new(self, PATH_START)
+@export var connection_handle1 := WEConnectionHandle.new(self, PATH_END)
 @export var connected_0: WEPathJunction
 @export var connected_1: WEPathJunction
 
@@ -36,13 +36,17 @@ func _ready():
 ## Connection is initated by this function, not the one on junction.
 func connect_path(junction: WEPathJunction, end: int):
 	if !is_instance_valid(junction):
-		push_error("Attempted to connect an invalid junction")
+		push_error("Attempted to connect an invalid instance")
 		return
+
+	# Clear previous
+	disconnect_path(end)
 
 	# Add points to curve if we don't have enough already.
 	while curve.point_count < 2:
 		curve.add_point(Vector3.ZERO)
 
+	# Connect
 	match end:
 		PATH_START:
 			connected_0 = junction

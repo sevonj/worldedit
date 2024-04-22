@@ -2,6 +2,8 @@ extends EditorNode3DGizmoPlugin
 
 const GIZMO = preload("we_path_gizmo.gd")
 
+# --- Virtual Methods --- #
+
 
 func _init():
 	create_icon_material("path_icon", WEConsts.ICON_PATH)
