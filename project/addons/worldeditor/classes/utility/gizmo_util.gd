@@ -34,17 +34,19 @@ static func raycast(gizmo: Node3DGizmo, camera: Camera3D, screen_pos: Vector2) -
 
 ## 3D marker cross
 static func lines_marker() -> PackedVector3Array:
-	return PackedVector3Array([
-		Vector3.UP,
-		Vector3.ZERO,
-		Vector3.DOWN,
-		Vector3.ZERO,
-		Vector3.LEFT,
-		Vector3.ZERO,
-		Vector3.RIGHT,
-		Vector3.ZERO,
-		Vector3.FORWARD,
-		Vector3.ZERO,
-		Vector3.BACK,
-		Vector3.ZERO,
-	]	)
+	return PackedVector3Array(
+		[
+			Vector3.UP,
+			Vector3.ZERO,
+			Vector3.DOWN,
+			Vector3.ZERO,
+			Vector3.LEFT,
+			Vector3.ZERO,
+			Vector3.RIGHT,
+			Vector3.ZERO,
+			Vector3.FORWARD,
+			Vector3.ZERO,
+			Vector3.BACK,
+			Vector3.ZERO,
+		]
+	)

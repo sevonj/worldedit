@@ -23,8 +23,7 @@ func _redraw(gizmo):
 
 	# Line between node and starting junction
 	if is_instance_valid(node._junction):
-		var line := PackedVector3Array([
-			node._junction.global_position - node.global_position,
-			Vector3.ZERO
-		])
+		var line := PackedVector3Array(
+			[node._junction.global_position - node.global_position, Vector3.ZERO]
+		)
 		gizmo.add_lines(line, get_material("main", gizmo), false)

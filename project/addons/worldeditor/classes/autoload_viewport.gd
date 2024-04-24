@@ -22,18 +22,15 @@ func get_mouse_pos_projected() -> Vector3:
 
 ##
 func create_new_path() -> void:
-
 	var junction: WEPathJunction
 	var selected := EditorInterface.get_selection().get_selected_nodes()
 	if selected.size() == 1:
 		if selected[0] is WEPathJunction:
 			junction = selected[0]
 
-
 	var feeler := NewPathFeeler.new(junction)
 	get_tree().edited_scene_root.add_child(feeler)
 	feeler.owner = get_tree().edited_scene_root
-
 
 
 func debug_print_camera() -> void:

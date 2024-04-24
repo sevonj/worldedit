@@ -15,6 +15,7 @@ func _ready():
 
 # --- Private --- #
 
+
 func _ui_input_add_path() -> Button:
 	var button := _ui_button("Path")
 	button.pressed.connect(ViewportMgr.create_new_path)

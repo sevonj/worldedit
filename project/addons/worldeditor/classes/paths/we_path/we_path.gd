@@ -137,11 +137,14 @@ func get_center() -> Vector3:
 		vectors.append(curve.get_point_position(i))
 	return WEUtility.get_center(vectors) + global_position
 
+
 # --- Private --- #
+
 
 func _on_curve_changed():
 	_on_any_update()
 	regenerate_samples()
+
 
 # Refresh, curve changed, etc.
 func _on_any_update():
@@ -151,4 +154,3 @@ func _on_any_update():
 	elif curve.point_count == 1:
 		if connected_0 != null or connected_1 != null:
 			queue_free()
-

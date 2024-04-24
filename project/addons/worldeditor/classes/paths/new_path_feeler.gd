@@ -5,6 +5,7 @@ class_name NewPathFeeler extends Node3D
 
 var _junction: WEPathJunction  ## Junction to connect the start to.
 
+
 ## If this path is supposed to be immediately connected to a junction, pass it here.
 func _init(junction: WEPathJunction = null):
 	_junction = junction
@@ -30,9 +31,11 @@ func _process(_delta):
 
 	update_gizmos()
 
+
 # --- Private --- #
 func _cancel():
 	queue_free()
+
 
 # Instance a new path and delete self
 # Path is returned for unit testing
@@ -68,7 +71,7 @@ func _get_input_cancel() -> bool:
 
 
 func _get_input_commit() -> bool:
-	if false: # Cursor not in viewport
+	if false:  # Cursor not in viewport
 		return false
 	if Input.is_action_just_pressed("ui_accept"):
 		return true
@@ -84,6 +87,3 @@ func _is_selected() -> bool:
 			if node == self:
 				return true
 	return false
-
-
-
