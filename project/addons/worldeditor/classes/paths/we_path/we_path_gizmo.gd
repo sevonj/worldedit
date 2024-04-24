@@ -44,7 +44,7 @@ func _redraw():
 	var node: WEPath = get_node_3d()
 	if not (_dragging_0 or _dragging_1):
 		reset_handles()
-	if node.curve.point_count < 2:
+	if node.curve.point_count < 2 or is_zero_approx(node.curve.get_baked_length()):
 		add_unscaled_billboard(
 			get_plugin().get_material("path_icon", self), WEConsts.GIZMO_ICON_SIZE
 		)
