@@ -16,5 +16,8 @@ const MAT_GIZMO_PRIMARYLIGHT = preload(
 
 const MDL_ARROW = preload("res://addons/worldeditor/assets/models/gizmo_arrow.obj")
 
+# --- Colors --- #
+const COLOR_JUNCTION := Color.GREEN
+
 # --- Physics ---#
 const COL_LAYER_GIZMO: int = 2

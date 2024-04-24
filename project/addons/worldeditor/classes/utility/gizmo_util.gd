@@ -14,9 +14,8 @@ static func plane_line_intersection(
 	return Vector3.ZERO
 
 
-static func raycast(gizmo: Node3DGizmo, camera: Camera3D, screen_pos: Vector2):
-	""" For checking if a handle hovers over something. """
-
+## For checking if a handle hovers over something.
+static func raycast(gizmo: Node3DGizmo, camera: Camera3D, screen_pos: Vector2) -> CollisionObject3D:
 	var line_a: Vector3 = camera.project_ray_origin(screen_pos)
 	var line_b: Vector3 = line_a + camera.project_ray_normal(screen_pos) * 4096
 	var query := PhysicsRayQueryParameters3D.create(line_a, line_b)
@@ -31,3 +30,21 @@ static func raycast(gizmo: Node3DGizmo, camera: Camera3D, screen_pos: Vector2):
 		. intersect_ray(query)
 	)
 	return result.get("collider")
+
+
+## 3D marker cross
+static func lines_marker() -> PackedVector3Array:
+	return PackedVector3Array([
+		Vector3.UP,
+		Vector3.ZERO,
+		Vector3.DOWN,
+		Vector3.ZERO,
+		Vector3.LEFT,
+		Vector3.ZERO,
+		Vector3.RIGHT,
+		Vector3.ZERO,
+		Vector3.FORWARD,
+		Vector3.ZERO,
+		Vector3.BACK,
+		Vector3.ZERO,
+	]	)

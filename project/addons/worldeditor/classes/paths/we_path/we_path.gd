@@ -21,7 +21,10 @@ enum {
 
 
 func _init():
-	curve_changed.connect(regenerate_samples)
+	if !is_instance_valid(curve):
+		curve = Curve3D.new()
+		curve.add_point(Vector3.ZERO)
+	curve_changed.connect(_on_curve_changed)
 
 
 func _ready():
@@ -72,10 +75,12 @@ func disconnect_path(end: int):
 
 
 func refresh():
+	_on_any_update()
+
 	# We do not want scale or rotation.
 	transform.basis = Basis()
 
-	if curve.point_count <= 1:
+	if curve.point_count == 1:
 		return
 
 	# Keep curve ends welded to junctions
@@ -95,6 +100,10 @@ func regenerate_samples():
 		return
 
 	var length := curve.get_baked_length()
+	if is_zero_approx(length):
+		samples.append(transform)
+		return
+
 	var sample_count := int(length / segment_length) + 2
 	var actual_segment_length := length / (sample_count - 1)
 	for i in sample_count:
@@ -129,3 +138,17 @@ func get_center() -> Vector3:
 	return WEUtility.get_center(vectors) + global_position
 
 # --- Private --- #
+
+func _on_curve_changed():
+	_on_any_update()
+	regenerate_samples()
+
+# Refresh, curve changed, etc.
+func _on_any_update():
+	# Self-destruct if empty curve
+	if curve.point_count == 0:
+		queue_free()
+	elif curve.point_count == 1:
+		if connected_0 != null or connected_1 != null:
+			queue_free()
+
