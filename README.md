@@ -1,6 +1,6 @@
 # WorldEdit
 
-An unfinished parametric terrain generator for Godot game engine.
+An unfinished spline-based terrain generator for Godot game engine.
 
 Runs in editor, <sub>mistakenly</sub> written entirely in GDScript.
 
