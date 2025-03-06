@@ -17,3 +17,7 @@ Runs in editor, <sub>mistakenly</sub> written entirely in GDScript.
 | ![structure](https://github.com/user-attachments/assets/b12e0443-530e-402d-bfae-29e01efa83e1) | ![modifiers](https://github.com/user-attachments/assets/c4a7c4fd-0c60-4780-8590-6487e7ca6a33)                                         |
 |-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | The world is a network of splines and junctions.                                              | The network itself doesn't do anything. Actual mesh generation is handled by modifier nodes. Pic: Road mesh components under splines. |
+
+Inspired by Volition's amazing tool:
+- 2011 GDC talk: https://gdcvault.com/play/1014717/Building-Open-Worlds-Faster-the
+- 2018 GDC talk: https://gdcvault.com/play/1025244/Spline-Based-Procedural-Modeling-in
