@@ -1,5 +1,7 @@
 # WorldEdit
 
+[➜ See also: WorldEdit II](https://github.com/sevonj/worldedit2)
+
 An unfinished spline-based terrain generator for Godot game engine.
 
 Runs in editor, <sub>mistakenly</sub> written entirely in GDScript.
