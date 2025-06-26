@@ -4,7 +4,7 @@
 
 An unfinished spline-based terrain generator for Godot game engine.
 
-Runs in editor, <sub>mistakenly</sub> written entirely in GDScript.
+Runs in editor, <sub>mistakenly?</sub> entirely written in GDScript.
 
 ![demo](https://github.com/user-attachments/assets/8ba23650-1efc-4699-84d3-1cddf3ff9485)
 
@@ -20,6 +20,6 @@ Runs in editor, <sub>mistakenly</sub> written entirely in GDScript.
 |-----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | The world is a network of splines and junctions.                                              | The network itself doesn't do anything. Actual mesh generation is handled by modifier nodes. Pic: Road mesh components under splines. |
 
-Inspired by Volition's amazing tool:
+Inspired by Volition's amazing in-house tooling they used for their games:
 - 2011 GDC talk: https://gdcvault.com/play/1014717/Building-Open-Worlds-Faster-the
 - 2018 GDC talk: https://gdcvault.com/play/1025244/Spline-Based-Procedural-Modeling-in
